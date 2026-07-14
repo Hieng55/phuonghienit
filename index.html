@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html dir="ltr" lang="vi">
 <head>
 <!-- Core SEO -->
@@ -16,7 +17,6 @@
 <!-- Search engine directives -->
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="googlebot"/>
-
 <link href="https://phuonghienit.netlify.app/" rel="canonical"/>
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta content="vi_VN" property="og:locale"/>
@@ -28,8 +28,6 @@
 <meta content="https://phuonghienit.netlify.app/image/logo.png" property="og:image"/>
 <meta content="https://phuonghienit.netlify.app/image/logo.png" property="og:image:secure_url"/>
 <meta content="image/png" property="og:image:type"/>
-
-
 <meta content="Logo Phương Hiển IT — Creative Full-stack Developer" property="og:image:alt"/>
 <meta content="Phương Hiển" property="profile:first_name"/>
 <meta content="IT" property="profile:last_name"/>
@@ -60,7 +58,7 @@
         "Phương Hiển IT Portfolio",
         "Phuong Hien IT"
       ],
-      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên xây dựng website, API, database, UI/UX, GSAP, Three.js, WebGL và technical SEO.",
+      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, API, UI/UX, Three.js và GSAP.",
       "inLanguage": [
         "vi-VN",
         "en-US"
@@ -75,7 +73,7 @@
       "url": "https://phuonghienit.netlify.app/",
       "name": "Phương Hiển IT | Creative Full-stack Developer",
       "headline": "Creative Full-stack Developer với 5 năm kinh nghiệm",
-      "description": "Portfolio Phương Hiển IT, Creative Full-stack Developer với 5 năm kinh nghiệm về front-end, back-end, API, database, GSAP, Three.js, WebGL và technical SEO.",
+      "description": "Portfolio của Phương Hiển IT, Creative Full-stack Developer với hơn 5 năm kinh nghiệm về React.js, Next.js, Node.js, Firebase, API, GSAP, Three.js và WebGL.",
       "isPartOf": {
         "@id": "https://phuonghienit.netlify.app/#website"
       },
@@ -132,7 +130,7 @@
       },
       "email": "mailto:hienlp17032001@gmail.com",
       "jobTitle": "Creative Full-stack Developer",
-      "description": "Creative Full-stack Developer với 5 năm kinh nghiệm xây dựng sản phẩm web từ front-end, back-end, API và database đến motion, Three.js, WebGL, technical SEO và tối ưu hiệu suất.",
+      "description": "Creative Full-stack Developer với hơn 5 năm kinh nghiệm, chuyên React.js, Next.js, Node.js, Firebase, REST API, UI/UX, GSAP, Three.js, WebGL, technical SEO và tối ưu hiệu suất.",
       "sameAs": [
         "https://www.facebook.com/phuonghienitdev/",
         "https://www.instagram.com/phuonghienitdev/",
@@ -164,7 +162,13 @@
           "Technical SEO",
           "Web Performance Optimization",
           "Git",
-          "Deployment"
+          "Deployment",
+          "React.js",
+          "Next.js",
+          "Node.js",
+          "Firebase",
+          "Cloud Firestore",
+          "Firebase Authentication"
         ]
       },
       "knowsAbout": [
@@ -192,7 +196,16 @@
         "Core Web Vitals",
         "Web Performance Optimization",
         "Landing Page Development",
-        "Deployment"
+        "Deployment",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Firebase",
+        "Firebase Authentication",
+        "Cloud Firestore",
+        "Firebase Storage",
+        "Server-side Rendering",
+        "REST API Development"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -201,8 +214,10 @@
         "availableLanguage": [
           "Vietnamese",
           "English"
-        ]
-      }
+        ],
+        "telephone": "+84364003638"
+      },
+      "telephone": "+84364003638"
     },
     {
       "@type": "Organization",
@@ -275,7 +290,11 @@
         "Merchant Services",
         "REST API",
         "Three.js",
-        "GSAP"
+        "GSAP",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Firebase"
       ]
     },
     {
@@ -283,7 +302,7 @@
       "@id": "https://phuonghienit.netlify.app/#salon-project",
       "url": "https://phuonghienit.netlify.app/#luxury-salon-web-system",
       "name": "Luxury Salon Web System",
-      "description": "Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.",
+      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, API, UI/UX, Three.js và GSAP.",
       "creator": {
         "@id": "https://phuonghienit.netlify.app/#person"
       },
@@ -314,7 +333,11 @@
         "Authentication",
         "REST API",
         "Database",
-        "Data Visualization"
+        "Data Visualization",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Firebase"
       ]
     },
     {
@@ -331,7 +354,11 @@
         "WebGL",
         "GSAP",
         "Creative Coding",
-        "Motion Design"
+        "Motion Design",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Firebase"
       ]
     }
   ]
@@ -2182,11 +2209,11 @@
       .about-grid,
       .expertise-wrap,
       .experience-shell {
-        gap: 45px;
+        gap: 44px;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr 0.88fr;
+        grid-template-columns: minmax(0, 1fr) minmax(330px, 0.82fr);
       }
 
       .project-card:nth-child(n) {
@@ -2203,8 +2230,17 @@
         --container: min(100% - 30px, 760px);
       }
 
+      html {
+        scroll-padding-top: 86px;
+      }
+
+      body {
+        overscroll-behavior-y: auto;
+        touch-action: pan-y;
+      }
+
       .section {
-        padding: 95px 0;
+        padding: 88px 0;
       }
 
       .cursor,
@@ -2214,21 +2250,23 @@
 
       .nav {
         position: fixed;
-        top: 78px;
+        top: 74px;
         right: 15px;
         left: 15px;
         display: grid;
         gap: 0;
+        max-height: calc(100svh - 94px);
+        overflow-y: auto;
         padding: 14px;
         border: 1px solid var(--line);
         border-radius: 22px;
         transform: translateY(-18px) scale(0.98);
         opacity: 0;
         visibility: hidden;
-        background: rgba(7, 10, 16, 0.94);
+        background: rgba(7, 10, 16, 0.96);
         box-shadow: var(--shadow);
-        -webkit-backdrop-filter: blur(22px);
-        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
         transition: 0.3s ease;
       }
 
@@ -2255,7 +2293,7 @@
 
       .hero {
         min-height: auto;
-        padding-top: 130px;
+        padding: 120px 0 72px;
       }
 
       .hero-grid,
@@ -2263,11 +2301,15 @@
       .expertise-wrap,
       .experience-shell,
       .footer-top {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-content {
+        max-width: 720px;
       }
 
       .hero-visual {
-        min-height: 560px;
+        min-height: 520px;
       }
 
       .about-sticky,
@@ -2278,205 +2320,678 @@
       }
 
       .projects-header {
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
+        margin-bottom: 42px;
+      }
+
+      .projects-grid {
+        gap: 18px;
       }
 
       .project-card:nth-child(n) {
         grid-column: span 12;
       }
 
-      .experience-shell {
-        gap: 55px;
+      .experience-shell,
+      .footer-top {
+        gap: 44px;
       }
 
-      .footer-top {
-        gap: 45px;
+      .cta-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 620px) {
       :root {
         --container: calc(100% - 24px);
-        --radius-xl: 26px;
-        --radius-lg: 21px;
+        --radius-xl: 24px;
+        --radius-lg: 20px;
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      }
+
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 18% 8%, rgba(124, 92, 255, 0.14), transparent 28%),
+          radial-gradient(circle at 86% 30%, rgba(32, 217, 255, 0.09), transparent 27%),
+          var(--bg);
+      }
+
+      .noise {
+        opacity: 0.035;
+      }
+
+      #webgl {
+        opacity: 0.64;
       }
 
       .section {
-        padding: 78px 0;
+        padding: 66px 0;
       }
 
-      .site-header {
-        padding: 13px 0;
+      .section-kicker {
+        gap: 8px;
+        margin-bottom: 13px;
+        font-size: 0.67rem;
+        letter-spacing: 0.14em;
+      }
+
+      .section-kicker::before {
+        width: 24px;
+      }
+
+      .section-title {
+        font-size: clamp(2.15rem, 11.3vw, 3.25rem);
+        line-height: 1.02;
+        letter-spacing: -0.052em;
+      }
+
+      .section-copy {
+        margin-top: 18px;
+        font-size: 0.96rem;
+        line-height: 1.7;
+      }
+
+      .site-header,
+      .site-header.scrolled {
+        padding: 10px 0;
+      }
+
+      .nav-wrap {
+        min-height: 50px;
+      }
+
+      .brand {
+        gap: 9px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+        border-radius: 12px;
+      }
+
+      .brand-mark img {
+        width: 31px;
+        height: 31px;
+      }
+
+      .brand-copy {
+        font-size: 0.9rem;
       }
 
       .brand-copy small {
         display: none;
       }
 
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .nav {
+        top: 67px;
+        right: 12px;
+        left: 12px;
+        border-radius: 18px;
+      }
+
       .hero {
-        padding-top: 115px;
+        padding: 105px 0 54px;
+      }
+
+      .hero-grid {
+        gap: 34px;
+      }
+
+      .availability {
+        max-width: 100%;
+        margin-bottom: 22px;
+        padding: 8px 11px;
+        font-size: 0.63rem;
+        letter-spacing: 0.065em;
       }
 
       .hero-title {
-        font-size: clamp(3.4rem, 17vw, 5.3rem);
-        line-height: 0.88;
+        font-size: clamp(3rem, 15.8vw, 4.7rem);
+        line-height: 0.9;
+        letter-spacing: -0.075em;
       }
 
       .hero-description {
-        margin-top: 22px;
+        margin-top: 21px;
+        font-size: 0.98rem;
+        line-height: 1.68;
       }
 
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 26px;
       }
 
       .btn {
         width: 100%;
+        min-height: 52px;
+        padding: 0 18px;
+        font-size: 0.78rem;
       }
 
       .hero-meta {
         display: grid;
-        gap: 14px;
+        gap: 10px;
+        margin-top: 26px;
       }
 
-      .hero-scroll {
+      .hero-meta-item {
+        gap: 10px;
+        font-size: 0.78rem;
+      }
+
+      .hero-meta-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 11px;
+      }
+
+      .hero-scroll,
+      .orbit-chip {
         display: none;
       }
 
       .hero-visual {
-        min-height: 470px;
-        margin-top: 10px;
+        min-height: 414px;
+        margin-top: 2px;
       }
 
       .code-panel {
         width: 100%;
-        min-height: 420px;
-        padding: 18px;
+        min-height: 390px;
+        overflow: hidden;
+        padding: 16px;
+        border-radius: 24px;
         transform: translate(-50%, -50%);
       }
 
-      .code-block {
-        font-size: 0.67rem;
-        line-height: 1.75;
+      .window-bar {
+        padding-bottom: 14px;
       }
 
-      .developer-card {
-        right: 10px;
-        bottom: -12px;
-        width: 210px;
-      }
-
-      .orbit-chip {
-        padding: 8px 11px;
+      .window-label {
         font-size: 0.62rem;
       }
 
-      .chip-one { top: 0; left: -2%; }
-      .chip-two { top: 23%; right: -2%; }
-      .chip-three { bottom: 14%; left: -2%; }
+      .code-block {
+        max-height: 310px;
+        margin-top: 18px;
+        overflow: auto;
+        padding: 0 0 86px;
+        font-size: 0.61rem;
+        line-height: 1.62;
+        white-space: pre;
+        scrollbar-width: none;
+      }
+
+      .code-block::-webkit-scrollbar {
+        display: none;
+      }
+
+      .developer-card {
+        right: 12px;
+        bottom: 12px;
+        width: min(214px, calc(100% - 24px));
+        padding: 13px;
+        border-radius: 17px;
+        transform: none;
+      }
+
+      .developer-avatar {
+        width: 43px;
+        height: 43px;
+        border-radius: 13px;
+        font-size: 0.9rem;
+      }
+
+      .developer-card h3 {
+        font-size: 0.84rem;
+      }
+
+      .developer-card p {
+        font-size: 0.64rem;
+      }
+
+      .developer-tags {
+        gap: 5px;
+        margin-top: 10px;
+      }
+
+      .developer-tags span {
+        padding: 5px 7px;
+        font-size: 0.58rem;
+      }
+
+      .tech-marquee {
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+      }
+
+      .marquee-track {
+        animation-duration: 34s;
+      }
+
+      .marquee-item {
+        gap: 9px;
+        padding: 16px 18px;
+        font-size: 0.71rem;
+      }
+
+      .about-grid {
+        gap: 32px;
+      }
 
       .about-card {
-        min-height: 480px;
+        min-height: 380px;
+        margin-top: 28px !important;
       }
 
       .about-orb {
-        width: 185px;
+        top: 13%;
+        width: 165px;
+      }
+
+      .about-card-copy {
+        right: 21px;
+        bottom: 21px;
+        left: 21px;
+      }
+
+      .about-card-copy h3 {
+        max-width: 270px;
+        font-size: 2rem;
+      }
+
+      .about-content {
+        gap: 14px;
       }
 
       .about-text-card,
-      .stat-card,
       .company-card {
-        padding: 23px;
+        padding: 21px;
       }
 
-      .stats-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
+      .about-text-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .about-text-card p {
+        margin-top: 12px;
+        font-size: 0.92rem;
+        line-height: 1.72;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+      }
+
+      .stat-card {
+        min-height: 150px;
+        padding: 18px;
+      }
+
+      .stat-number {
+        font-size: clamp(2.4rem, 12vw, 3.3rem);
+      }
+
+      .stat-label {
+        margin-top: 10px;
+        font-size: 0.74rem;
+        line-height: 1.45;
       }
 
       .company-card {
         align-items: flex-start;
         flex-direction: column-reverse;
+        gap: 18px;
+      }
+
+      .company-logo {
+        min-width: 58px;
+        height: 58px;
+        border-radius: 18px;
+      }
+
+      .projects-header {
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      .projects-count {
+        font-size: 0.66rem;
+      }
+
+      .projects-grid {
+        gap: 14px;
       }
 
       .project-card {
-        min-height: 520px;
+        min-height: 472px;
+        border-radius: 24px;
       }
 
       .project-visual {
-        top: 30px;
-        right: 20px;
-        left: 20px;
-        height: 245px;
+        top: 22px;
+        right: 16px;
+        left: 16px;
+        height: 210px;
+      }
+
+      .mock-browser {
+        border-radius: 16px;
+        transform: none;
       }
 
       .project-content {
-        right: 22px;
-        bottom: 22px;
-        left: 22px;
+        right: 19px;
+        bottom: 19px;
+        left: 19px;
+      }
+
+      .project-number {
+        font-size: 0.62rem;
+      }
+
+      .project-title {
+        margin-top: 8px;
+        font-size: 1.74rem;
+      }
+
+      .project-description {
+        margin-top: 9px;
+        font-size: 0.82rem;
+        line-height: 1.54;
+      }
+
+      .project-tags {
+        gap: 5px;
+        margin-top: 12px;
+      }
+
+      .project-tags span {
+        padding: 6px 8px;
+        font-size: 0.6rem;
       }
 
       .salon-layout,
       .dashboard {
-        width: 90%;
+        width: 92%;
       }
 
       .motion-cube {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
       }
 
-      .motion-cube span:nth-child(1) { transform: translateZ(55px); }
-      .motion-cube span:nth-child(2) { transform: rotateY(180deg) translateZ(55px); }
-      .motion-cube span:nth-child(3) { transform: rotateY(90deg) translateZ(55px); }
-      .motion-cube span:nth-child(4) { transform: rotateY(-90deg) translateZ(55px); }
-      .motion-cube span:nth-child(5) { transform: rotateX(90deg) translateZ(55px); }
-      .motion-cube span:nth-child(6) { transform: rotateX(-90deg) translateZ(55px); }
+      .motion-cube span:nth-child(1) { transform: translateZ(50px); }
+      .motion-cube span:nth-child(2) { transform: rotateY(180deg) translateZ(50px); }
+      .motion-cube span:nth-child(3) { transform: rotateY(90deg) translateZ(50px); }
+      .motion-cube span:nth-child(4) { transform: rotateY(-90deg) translateZ(50px); }
+      .motion-cube span:nth-child(5) { transform: rotateX(90deg) translateZ(50px); }
+      .motion-cube span:nth-child(6) { transform: rotateX(-90deg) translateZ(50px); }
+
+      .expertise-wrap {
+        gap: 30px;
+      }
+
+      .expertise-list {
+        display: grid;
+        gap: 11px;
+        border-top: 0;
+      }
 
       .expertise-item {
-        grid-template-columns: 42px 1fr;
-        gap: 12px;
-        padding: 25px 0;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 8px 11px;
+        margin: 0;
+        padding: 19px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)),
+          rgba(8, 12, 20, 0.46);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
       }
 
-      .expertise-level {
+      .expertise-item::before {
         display: none;
       }
 
-      .expertise-detail {
+      .expertise-index {
+        padding-top: 4px;
+      }
+
+      .expertise-name {
+        font-size: 1.22rem;
+        line-height: 1.1;
+      }
+
+      .expertise-level {
+        display: inline-flex;
         grid-column: 2;
+        justify-self: start;
+        padding: 5px 8px;
+        border: 1px solid var(--line-soft);
+        border-radius: 999px;
+        font-size: 0.57rem;
+      }
+
+      .expertise-detail {
+        grid-column: 1 / -1;
+        margin-top: 4px;
+        font-size: 0.84rem;
+        line-height: 1.62;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .process-card {
+        min-height: auto;
+        padding: 21px;
+      }
+
+      .process-icon {
+        width: 46px;
+        height: 46px;
+        margin-top: 25px;
+        border-radius: 14px;
+      }
+
+      .process-card h3 {
+        margin-top: 18px;
+        font-size: 1.24rem;
+      }
+
+      .process-card p {
+        margin-top: 9px;
+        font-size: 0.84rem;
+        line-height: 1.62;
+      }
+
+      .experience-shell {
+        gap: 35px;
       }
 
       .experience-years {
-        padding: 28px;
+        padding: 24px;
+      }
+
+      .experience-big {
+        font-size: clamp(6rem, 34vw, 9rem);
+      }
+
+      .experience-years p {
+        margin-top: 22px;
+        font-size: 0.9rem;
       }
 
       .timeline {
-        padding-left: 25px;
+        padding-left: 22px;
       }
 
       .timeline-item {
-        padding-left: 20px;
+        padding: 0 0 42px 18px;
       }
 
       .timeline-item::before {
-        left: -25px;
+        left: -22px;
+      }
+
+      .timeline-item h3 {
+        font-size: 1.55rem;
+      }
+
+      .timeline-company {
+        font-size: 0.82rem;
+      }
+
+      .timeline-item p {
+        margin-top: 12px;
+        font-size: 0.86rem;
+        line-height: 1.65;
+      }
+
+      .cta {
+        padding-top: 45px;
       }
 
       .cta-panel {
-        padding: 55px 22px;
-        border-radius: 30px;
+        padding: 45px 18px;
+        border-radius: 26px;
+      }
+
+      .cta-title {
+        font-size: clamp(2.25rem, 11.5vw, 3.45rem);
+        line-height: 1.02;
+      }
+
+      .cta-copy {
+        margin-top: 18px;
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .cta-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 26px;
+      }
+
+      .cta-actions .btn {
+        min-width: 0;
+        padding: 0 11px;
+        font-size: 0.7rem;
+      }
+
+      .cta-actions .btn:nth-child(1),
+      .cta-actions .btn:nth-child(2) {
+        grid-column: 1 / -1;
+      }
+
+      .footer {
+        padding: 67px 0 25px;
+      }
+
+      .footer-top {
+        gap: 35px;
+        padding-bottom: 38px;
+      }
+
+      .footer-logo {
+        width: 66px;
+        height: 66px;
+        margin-bottom: 17px;
+        border-radius: 19px;
+      }
+
+      .footer-brand h2 {
+        font-size: 2.55rem;
+      }
+
+      .footer-brand p {
+        margin-top: 15px;
+        font-size: 0.88rem;
+        line-height: 1.65;
+      }
+
+      .footer-brand address {
+        display: grid;
+        gap: 9px;
+        margin-top: 16px;
+      }
+
+      .footer-brand address a {
+        overflow-wrap: anywhere;
+        font-size: 0.84rem;
       }
 
       .footer-links {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .footer-column ul {
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .footer-column a {
+        font-size: 0.82rem;
       }
 
       .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
+        gap: 14px;
+        padding-top: 22px;
+        font-size: 0.7rem;
+      }
+
+      .glass {
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+      }
+    }
+
+    @media (max-width: 390px) {
+      .stats-grid,
+      .footer-links,
+      .cta-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions .btn:nth-child(n) {
+        grid-column: auto;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .project-card {
+        min-height: 490px;
       }
     }
 
@@ -2565,7 +3080,7 @@
 <div class="hero-meta">
 <div class="hero-meta-item">
 <span class="hero-meta-icon"><i class="fa-solid fa-code"></i></span>
-<span>Full-stack Web Development</span>
+<span>React, Next.js, Node.js &amp; Firebase</span>
 </div>
 <div class="hero-meta-item">
 <span class="hero-meta-icon"><i class="fa-solid fa-cube"></i></span>
@@ -2591,9 +3106,9 @@
     <span class="pink">"Motion Interfaces"</span>
   ],
   stack: {
-    frontend: [<span class="green">"HTML"</span>, <span class="green">"CSS"</span>, <span class="green">"JavaScript"</span>],
-    backend: [<span class="green">"Server Logic"</span>, <span class="green">"REST API"</span>, <span class="green">"Authentication"</span>],
-    data: [<span class="green">"Database"</span>, <span class="green">"Data Modeling"</span>],
+    frontend: [<span class="green">"React.js"</span>, <span class="green">"Next.js"</span>, <span class="green">"JavaScript"</span>],
+    backend: [<span class="green">"Node.js"</span>, <span class="green">"REST API"</span>, <span class="green">"Authentication"</span>],
+    cloud: [<span class="green">"Firebase"</span>, <span class="green">"Firestore"</span>, <span class="green">"Hosting"</span>],
     creative: [<span class="green">"GSAP"</span>, <span class="green">"Three.js"</span>, <span class="green">"WebGL"</span>]
   }
 };
@@ -2616,10 +3131,10 @@
 </div>
 </div>
 <div class="developer-tags">
-<span>Full-stack</span>
-<span>REST API</span>
-<span>Three.js</span>
-<span>GSAP</span>
+<span>React.js</span>
+<span>Next.js</span>
+<span>Node.js</span>
+<span>Firebase</span>
 </div>
 </div>
 </div>
@@ -2635,8 +3150,8 @@
 </section>
 <section aria-label="Công nghệ và nền tảng chuyên môn" class="tech-marquee">
 <div class="marquee-track">
-<div class="marquee-group"><span class="marquee-item"><i class="fa-solid fa-code"></i> HTML5</span><span class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-server"></i> Back-end</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Database</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span><span class="marquee-item"><i class="fa-solid fa-gauge-high"></i> Performance</span></div>
-<div aria-hidden="true" class="marquee-group"><span class="marquee-item"><i class="fa-solid fa-code"></i> HTML5</span><span class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-server"></i> Back-end</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Database</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span><span class="marquee-item"><i class="fa-solid fa-gauge-high"></i> Performance</span></div>
+<div class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span></div>
+<div aria-hidden="true" class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span></div>
 </div>
 </section>
 <section aria-labelledby="about-title" class="section" id="about">
@@ -2792,7 +3307,7 @@
 <h2 class="section-title" id="skills-title">Kỹ năng kỹ thuật đi cùng <span class="gradient-text">tư duy thẩm mỹ.</span></h2>
 <p class="section-copy">Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.</p>
 </div>
-<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail">Semantic HTML, CSS architecture, JavaScript, responsive design, component thinking, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail">Xây dựng logic phía server, REST API, xử lý dữ liệu, validation, authentication, authorization và kết nối dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail">Thiết kế cấu trúc dữ liệu, quan hệ giữa các thực thể, truy vấn, tính toàn vẹn dữ liệu và luồng đồng bộ giữa client với server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article></div>
+<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail">Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail">Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail">Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">React, Next.js, Node.js &amp; Firebase</h3><span class="expertise-level">Modern Stack</span><p class="expertise-detail">Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">07</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article></div>
 </div>
 </section>
 <section aria-labelledby="process-title" class="section" id="process">
@@ -2866,7 +3381,7 @@
 <div class="section-kicker" style="justify-content:center;">Start A Project</div>
 <h2 class="cta-title" id="contact-title">Có một ý tưởng đủ lớn? Hãy biến nó thành <span class="gradient-text">trải nghiệm thật.</span></h2>
 <p class="cta-copy">Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.</p>
-<div class="cta-actions"><a class="btn btn-primary magnetic" href="mailto:hienlp17032001@gmail.com"><span>Gửi email hợp tác</span><i class="fa-solid fa-envelope"></i></a><a aria-label="Xem GitHub của Phương Hiển IT" class="btn btn-secondary magnetic" href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank"><span>Xem GitHub</span><i class="fa-brands fa-github"></i></a><a aria-label="Facebook Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Facebook</span><i class="fa-brands fa-facebook-f"></i></a><a aria-label="Instagram Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Instagram</span><i class="fa-brands fa-instagram"></i></a></div>
+<div class="cta-actions"><a class="btn btn-primary magnetic" href="mailto:hienlp17032001@gmail.com"><span>Gửi email hợp tác</span><i class="fa-solid fa-envelope"></i></a><a aria-label="Gọi cho Phương Hiển IT" class="btn btn-secondary magnetic" href="tel:+84364003638"><span>0364 003 638</span><i class="fa-solid fa-phone"></i></a><a aria-label="Xem GitHub của Phương Hiển IT" class="btn btn-secondary magnetic" href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank"><span>Xem GitHub</span><i class="fa-brands fa-github"></i></a><a aria-label="Facebook Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Facebook</span><i class="fa-brands fa-facebook-f"></i></a><a aria-label="Instagram Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Instagram</span><i class="fa-brands fa-instagram"></i></a></div>
 </div>
 </div>
 </div>
@@ -2883,6 +3398,9 @@
 <a aria-label="Gửi email cho Phương Hiển IT" href="mailto:hienlp17032001@gmail.com">
               hienlp17032001@gmail.com
             </a>
+<a aria-label="Gọi cho Phương Hiển IT" href="tel:+84364003638">
+              0364 003 638
+            </a>
 </address>
 </div>
 <div class="footer-links">
@@ -2897,7 +3415,7 @@
 </div>
 <div class="footer-column">
 <h3>Kết nối</h3>
-<ul><li><a href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="mailto:hienlp17032001@gmail.com">Email</a></li></ul>
+<ul><li><a href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="mailto:hienlp17032001@gmail.com">Email</a></li><li><a href="tel:+84364003638">Phone</a></li></ul>
 </div>
 </div>
 </div>
@@ -2974,36 +3492,58 @@
           }, "-=0.9");
       });
 
-      // Smooth scroll
-      if (!reduceMotion && typeof Lenis !== "undefined") {
-        const lenis = new Lenis({
-          duration: 1.05,
-          smoothWheel: true,
-          wheelMultiplier: 0.9,
-          touchMultiplier: 1.2
-        });
+      // Smooth scrolling: one animation clock only.
+      // Touch devices use native scrolling for direct finger-to-page synchronization.
+      const isTouchDevice =
+        window.matchMedia("(pointer: coarse)").matches ||
+        navigator.maxTouchPoints > 0;
 
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
+      let lenis = null;
+
+      if (!reduceMotion && !isTouchDevice && typeof Lenis !== "undefined") {
+        lenis = new Lenis({
+          duration: 0.68,
+          smoothWheel: true,
+          wheelMultiplier: 1,
+          normalizeWheel: true
+        });
 
         lenis.on("scroll", ScrollTrigger.update);
-        gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
 
-        document.querySelectorAll('a[href^="#"]').forEach((link) => {
-          link.addEventListener("click", (event) => {
-            const target = document.querySelector(link.getAttribute("href"));
-            if (!target) return;
-            event.preventDefault();
-            lenis.scrollTo(target, { offset: -70 });
-            nav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-          });
+        // Lenis is driven only by GSAP's ticker. A second RAF loop would
+        // update it twice and create the delayed / unsynchronized feeling.
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
         });
+        gsap.ticker.lagSmoothing(0);
       }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const selector = link.getAttribute("href");
+          const target = selector && selector !== "#" ? document.querySelector(selector) : null;
+          if (!target) return;
+
+          event.preventDefault();
+          const targetY = target.getBoundingClientRect().top + window.scrollY - 70;
+
+          if (lenis) {
+            lenis.scrollTo(targetY, {
+              duration: 0.7,
+              immediate: false
+            });
+          } else {
+            window.scrollTo({
+              top: targetY,
+              behavior: reduceMotion ? "auto" : "smooth"
+            });
+          }
+
+          nav.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
+        });
+      });
 
       // Mobile navigation
       menuToggle.addEventListener("click", () => {
@@ -3241,13 +3781,13 @@
           alpha: true,
           antialias: Math.min(window.devicePixelRatio, 2) <= 1.5
         });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.2 : 1.6));
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         const group = new THREE.Group();
         scene.add(group);
 
-        const count = window.innerWidth < 700 ? 850 : 1500;
+        const count = window.innerWidth < 700 ? 480 : 1400;
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
         const colorA = new THREE.Color("#7c5cff");
@@ -3330,11 +3870,11 @@
           camera.aspect = window.innerWidth / window.innerHeight;
           camera.updateProjectionMatrix();
           renderer.setSize(window.innerWidth, window.innerHeight);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.2 : 1.6));
         });
       }
     })();
   </script>
-
+<noscript>
 </body>
 </html>
