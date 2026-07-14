@@ -4,9 +4,22 @@
 <head>
 <!-- Core SEO -->
 <meta charset="utf-8"/>
+<script>
+  (() => {
+    try {
+      const savedTheme = localStorage.getItem("ph-theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+        document.documentElement.style.colorScheme = savedTheme;
+      }
+    } catch (error) {
+      /* Use the default theme when storage is unavailable. */
+    }
+  })();
+</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Phương Hiển IT | Creative Full-stack Developer</title>
-<meta content="Portfolio Phương Hiển IT, Creative Full-stack Developer với 5 năm kinh nghiệm về front-end, back-end, API, database, GSAP, Three.js, WebGL và technical SEO." name="description"/>
+<meta content="Portfolio Phương Hiển IT, Creative Full-stack Developer với hơn 5 năm kinh nghiệm về React.js, Next.js, Node.js, Firebase, Google Business Profile, Google Ads, Meta Ads và technical SEO." name="description"/>
 <meta content="Phương Hiển IT" name="author"/>
 <meta content="Phương Hiển IT Portfolio" name="application-name"/>
 <meta content="Phương Hiển IT" name="generator"/>
@@ -23,7 +36,7 @@
 <meta content="profile" property="og:type"/>
 <meta content="Phương Hiển IT" property="og:site_name"/>
 <meta content="Phương Hiển IT | Creative Full-stack Developer" property="og:title"/>
-<meta content="Portfolio Phương Hiển IT, Creative Full-stack Developer với 5 năm kinh nghiệm về front-end, back-end, API, database, GSAP, Three.js, WebGL và technical SEO." property="og:description"/>
+<meta content="Creative Full-stack Developer chuyên website, motion, Google Business Profile, Google Ads, Facebook Ads, Instagram Ads và xử lý các vấn đề vận hành hồ sơ doanh nghiệp." property="og:description"/>
 <meta content="https://phuonghienit.netlify.app/" property="og:url"/>
 <meta content="https://phuonghienit.netlify.app/image/logo.png" property="og:image"/>
 <meta content="https://phuonghienit.netlify.app/image/logo.png" property="og:image:secure_url"/>
@@ -34,7 +47,7 @@
 <!-- X / Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Phương Hiển IT | Creative Full-stack Developer" name="twitter:title"/>
-<meta content="Portfolio Phương Hiển IT, Creative Full-stack Developer với 5 năm kinh nghiệm về front-end, back-end, API, database, GSAP, Three.js, WebGL và technical SEO." name="twitter:description"/>
+<meta content="Portfolio Full-stack Developer với React, Next.js, Node.js, Firebase, Google Business Profile, Google Ads và Meta Ads." name="twitter:description"/>
 <meta content="https://phuonghienit.netlify.app/image/logo.png" name="twitter:image"/>
 <meta content="Logo Phương Hiển IT — Creative Full-stack Developer" name="twitter:image:alt"/>
 <!-- Icons -->
@@ -58,7 +71,7 @@
         "Phương Hiển IT Portfolio",
         "Phuong Hien IT"
       ],
-      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, API, UI/UX, Three.js và GSAP.",
+      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, Google Business Profile, Google Ads, Meta Ads, UI/UX, Three.js và GSAP.",
       "inLanguage": [
         "vi-VN",
         "en-US"
@@ -73,7 +86,7 @@
       "url": "https://phuonghienit.netlify.app/",
       "name": "Phương Hiển IT | Creative Full-stack Developer",
       "headline": "Creative Full-stack Developer với 5 năm kinh nghiệm",
-      "description": "Portfolio của Phương Hiển IT, Creative Full-stack Developer với hơn 5 năm kinh nghiệm về React.js, Next.js, Node.js, Firebase, API, GSAP, Three.js và WebGL.",
+      "description": "Portfolio của Phương Hiển IT, Creative Full-stack Developer với hơn 5 năm kinh nghiệm về full-stack development, Google Business Profile, Google Ads, Meta Ads, GSAP, Three.js và WebGL.",
       "isPartOf": {
         "@id": "https://phuonghienit.netlify.app/#website"
       },
@@ -104,6 +117,12 @@
         },
         {
           "@id": "https://phuonghienit.netlify.app/#motion-project"
+        },
+        {
+          "@id": "https://phuonghienit.netlify.app/#google-business-service"
+        },
+        {
+          "@id": "https://phuonghienit.netlify.app/#digital-ads-service"
         }
       ]
     },
@@ -130,7 +149,7 @@
       },
       "email": "mailto:hienlp17032001@gmail.com",
       "jobTitle": "Creative Full-stack Developer",
-      "description": "Creative Full-stack Developer với hơn 5 năm kinh nghiệm, chuyên React.js, Next.js, Node.js, Firebase, REST API, UI/UX, GSAP, Three.js, WebGL, technical SEO và tối ưu hiệu suất.",
+      "description": "Creative Full-stack Developer với hơn 5 năm kinh nghiệm, chuyên React.js, Next.js, Node.js, Firebase, REST API, UI/UX, Google Business Profile, Google Ads, Meta Ads, GSAP, Three.js, WebGL và technical SEO.",
       "sameAs": [
         "https://www.facebook.com/phuonghienitdev/",
         "https://www.instagram.com/phuonghienitdev/",
@@ -168,7 +187,13 @@
           "Node.js",
           "Firebase",
           "Cloud Firestore",
-          "Firebase Authentication"
+          "Firebase Authentication",
+          "Google Business Profile Verification",
+          "Google Business Profile Troubleshooting",
+          "Google Ads",
+          "Facebook Ads",
+          "Instagram Ads",
+          "Meta Ads"
         ]
       },
       "knowsAbout": [
@@ -205,7 +230,16 @@
         "Cloud Firestore",
         "Firebase Storage",
         "Server-side Rendering",
-        "REST API Development"
+        "REST API Development",
+        "Google Business Profile",
+        "Google Business Profile Verification",
+        "Google Business Profile Posts",
+        "Google Review Troubleshooting",
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "Meta Ads",
+        "Local Business Marketing"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -217,7 +251,21 @@
         ],
         "telephone": "+84364003638"
       },
-      "telephone": "+84364003638"
+      "telephone": "+84364003638",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://phuonghienit.netlify.app/#google-business-service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://phuonghienit.netlify.app/#digital-ads-service"
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -302,7 +350,7 @@
       "@id": "https://phuonghienit.netlify.app/#salon-project",
       "url": "https://phuonghienit.netlify.app/#luxury-salon-web-system",
       "name": "Luxury Salon Web System",
-      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, API, UI/UX, Three.js và GSAP.",
+      "description": "Portfolio chính thức của Phương Hiển IT, Creative Full-stack Developer chuyên React.js, Next.js, Node.js, Firebase, Google Business Profile, Google Ads, Meta Ads, UI/UX, Three.js và GSAP.",
       "creator": {
         "@id": "https://phuonghienit.netlify.app/#person"
       },
@@ -360,6 +408,52 @@
         "Node.js",
         "Firebase"
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://phuonghienit.netlify.app/#google-business-service",
+      "name": "Google Business Profile Support",
+      "alternateName": "Google Business Profile Verification and Troubleshooting",
+      "serviceType": "Google Business Profile support",
+      "description": "Hỗ trợ xác minh Google Business Profile và xử lý các vấn đề vận hành như không đăng được bài, review bị ẩn, quyền truy cập hồ sơ và các lỗi liên quan đến hiển thị thông tin doanh nghiệp.",
+      "provider": {
+        "@id": "https://phuonghienit.netlify.app/#person"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://phuonghienit.netlify.app/",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+84364003638"
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://phuonghienit.netlify.app/#digital-ads-service",
+      "name": "Google Ads and Meta Ads Support",
+      "alternateName": "Google, Facebook and Instagram Advertising",
+      "serviceType": "Digital advertising support",
+      "description": "Hỗ trợ thiết lập và vận hành Google Ads, Facebook Ads và Instagram Ads cho doanh nghiệp, kết hợp website, local presence và hành trình chuyển đổi.",
+      "provider": {
+        "@id": "https://phuonghienit.netlify.app/#person"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://phuonghienit.netlify.app/",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+84364003638"
+        }
+      }
     }
   ]
 }
@@ -3616,132 +3710,97 @@
       }
     }
 
+
+
     /* ================================================================
-       EXPERTISE LIST — CLEARER CARD SYSTEM
+       PRELOADER THEME SYNC
        ================================================================ */
-    .expertise-list {
-      display: grid;
-      gap: 14px;
-      border-top: 0;
-    }
-
-    .expertise-item {
-      overflow: hidden;
-      padding: 26px 24px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
+    html[data-theme="light"] .preloader {
+      color: #101827;
       background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.055),
-          rgba(255, 255, 255, 0.018)
+        radial-gradient(
+          circle at 18% 14%,
+          rgba(96, 68, 223, 0.12),
+          transparent 32%
         ),
-        rgba(8, 12, 20, 0.44);
-      box-shadow: 0 15px 42px rgba(0, 0, 0, 0.16);
-    }
-
-    .expertise-item::before {
-      z-index: 0;
-      border-radius: inherit;
-    }
-
-    .expertise-item > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .expertise-name {
-      color: var(--text);
-    }
-
-    .expertise-level {
-      display: inline-flex;
-      min-height: 30px;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 10px;
-      border: 1px solid rgba(32, 217, 255, 0.2);
-      border-radius: 999px;
-      color: #cceff6;
-      background: rgba(32, 217, 255, 0.08);
-      font-size: 0.66rem;
-      font-weight: 600;
-    }
-
-    .expertise-detail {
-      color: #aeb8c8;
-    }
-
-    /* Light mode must override the dark mobile expertise-card background. */
-    html[data-theme="light"] .expertise-item {
-      border-color: rgba(51, 65, 85, 0.16);
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 1),
-          rgba(247, 250, 253, 0.98)
+        radial-gradient(
+          circle at 82% 82%,
+          rgba(0, 111, 145, 0.1),
+          transparent 34%
         ),
-        #ffffff;
-      box-shadow: 0 14px 34px rgba(35, 48, 72, 0.1);
+        #f4f7fb;
     }
 
-    html[data-theme="light"] .expertise-item::before {
+    html[data-theme="light"] .preloader::before {
+      background: rgba(96, 68, 223, 0.14);
+    }
+
+    html[data-theme="light"] .preloader::after {
+      background: rgba(0, 111, 145, 0.12);
+    }
+
+    html[data-theme="light"] .preloader-logo {
+      color: #101827;
+    }
+
+    html[data-theme="light"] .preloader-logo span {
+      color: #6044df;
+    }
+
+    html[data-theme="light"] .preloader-line {
+      background: rgba(30, 41, 59, 0.14);
+    }
+
+    html[data-theme="light"] .preloader-line::after {
       background: linear-gradient(
         90deg,
-        rgba(96, 68, 223, 0.075),
-        rgba(0, 111, 145, 0.045)
+        #6044df,
+        #007a9c,
+        #087453
       );
     }
 
-    html[data-theme="light"] .expertise-index {
-      color: #006f91;
-      font-weight: 700;
+    html[data-theme="light"] .preloader-meta {
+      color: #526176;
     }
 
-    html[data-theme="light"] .expertise-name {
-      color: #111827;
-      font-weight: 600;
-    }
-
-    html[data-theme="light"] .expertise-detail {
-      color: #435168;
-    }
-
-    html[data-theme="light"] .expertise-level {
-      color: #4f35c8;
-      border-color: rgba(96, 68, 223, 0.22);
-      background: rgba(96, 68, 223, 0.085);
-    }
-
-    html[data-theme="light"] .expertise-item:hover {
-      border-color: rgba(96, 68, 223, 0.28);
-      box-shadow: 0 18px 42px rgba(35, 48, 72, 0.14);
-    }
-
+    /* ================================================================
+       EXPERTISE CARDS — MOBILE ONLY
+       Desktop keeps the original line-based layout.
+       ================================================================ */
     @media (max-width: 620px) {
-      .expertise-list {
-        gap: 12px;
+      html[data-theme="light"] .expertise-item {
+        border-color: rgba(51, 65, 85, 0.16);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 1),
+            rgba(247, 250, 253, 0.98)
+          ),
+          #ffffff;
+        box-shadow: 0 14px 34px rgba(35, 48, 72, 0.1);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
       }
 
-      .expertise-item {
-        padding: 19px;
-        border-radius: 18px;
+      html[data-theme="light"] .expertise-index {
+        color: #006f91;
+        font-weight: 700;
       }
 
-      .expertise-name {
-        font-size: 1.2rem;
-        line-height: 1.15;
+      html[data-theme="light"] .expertise-name {
+        color: #111827;
+        font-weight: 600;
       }
 
-      .expertise-detail {
-        font-size: 0.84rem;
-        line-height: 1.62;
+      html[data-theme="light"] .expertise-detail {
+        color: #435168;
       }
 
-      .expertise-level {
-        min-height: 27px;
-        padding: 5px 9px;
-        font-size: 0.58rem;
+      html[data-theme="light"] .expertise-level {
+        color: #4f35c8;
+        border-color: rgba(96, 68, 223, 0.22);
+        background: rgba(96, 68, 223, 0.085);
       }
     }
 
@@ -3786,7 +3845,6 @@
 </nav><div class="header-actions"><button aria-label="Chuyển sang chế độ sáng" class="ui-control theme-toggle" id="themeToggle" title="Chuyển sang chế độ sáng" type="button"><i aria-hidden="true" class="fa-solid fa-sun"></i><span class="sr-only" id="themeToggleText">Chuyển sang chế độ sáng</span></button><button aria-label="Switch to English" class="ui-control language-toggle" id="languageToggle" title="Switch to English" type="button"><i aria-hidden="true" class="fa-solid fa-language"></i><span class="language-current" id="languageCurrent">VI</span></button><button aria-expanded="false" aria-label="Mở menu" class="menu-toggle" type="button">
 <i class="fa-solid fa-bars-staggered"></i>
 </button></div>
-
 </div>
 </header>
 <main>
@@ -3802,7 +3860,7 @@
 <span class="line"><span class="line-inner gradient-text">HIEN IT</span></span>
 <span class="line"><span class="line-inner outline">DEVELOPER</span></span>
 </h1>
-<p class="hero-description" data-i18n-html="hero.description">Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>full-stack development, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại, ổn định và có khả năng mở rộng. Hiện đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent trong lĩnh vực giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.</p>
+<p class="hero-description" data-i18n-html="hero.description">Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại và có khả năng mở rộng. Bên cạnh phát triển web, tôi còn hỗ trợ <strong>Google Business Profile, Google Ads, Facebook Ads, Instagram Ads</strong> và xử lý các vấn đề như xác minh hồ sơ, không đăng được bài hoặc review bị ẩn. Hiện tôi đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent cung cấp giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.</p>
 <div class="hero-actions">
 <a class="btn btn-primary magnetic" href="#projects">
 <span data-i18n="hero.projects">Khám phá dự án</span>
@@ -3883,8 +3941,8 @@
 </section>
 <section aria-label="Công nghệ và nền tảng chuyên môn" class="tech-marquee">
 <div class="marquee-track">
-<div class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span></div>
-<div aria-hidden="true" class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span></div>
+<div class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span><span class="marquee-item"><i class="fa-brands fa-google"></i> Google Business</span><span class="marquee-item"><i class="fa-solid fa-bullhorn"></i> Google Ads</span><span class="marquee-item"><i class="fa-brands fa-meta"></i> Meta Ads</span></div>
+<div aria-hidden="true" class="marquee-group"><span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span><span class="marquee-item"><i class="fa-solid fa-n"></i> Next.js</span><span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js</span><span class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</span><span class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</span><span class="marquee-item"><i class="fa-solid fa-plug"></i> REST API</span><span class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</span><span class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Authentication</span><span class="marquee-item"><i class="fa-solid fa-cube"></i> Three.js</span><span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> GSAP</span><span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span><span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span><span class="marquee-item"><i class="fa-brands fa-google"></i> Google Business</span><span class="marquee-item"><i class="fa-solid fa-bullhorn"></i> Google Ads</span><span class="marquee-item"><i class="fa-brands fa-meta"></i> Meta Ads</span></div>
 </div>
 </section>
 <section aria-labelledby="about-title" class="section" id="about">
@@ -3928,7 +3986,7 @@
 <article class="company-card glass reveal-card">
 <div>
 <strong>TD TRANSACTION LLC</strong>
-<p data-i18n="about.company">Tham gia phát triển website, landing page, hệ thống quản trị, luồng dữ liệu và trải nghiệm digital phục vụ merchant trong hệ sinh thái giải pháp thanh toán và marketing của SpotOn Agent.</p>
+<p data-i18n="about.company">Tham gia phát triển website, landing page, hệ thống quản trị và trải nghiệm digital cho merchant trong hệ sinh thái SpotOn Agent; đồng thời hỗ trợ xác minh Google Business Profile, xử lý lỗi không đăng được bài, review bị ẩn và triển khai Google Ads, Facebook Ads, Instagram Ads.</p>
 </div>
 <div class="company-logo">TD</div>
 </article>
@@ -4038,9 +4096,14 @@
 <div class="expertise-intro">
 <div class="section-kicker" data-i18n="skills.kicker">Core Expertise</div>
 <h2 class="section-title" data-i18n-html="skills.title" id="skills-title">Kỹ năng kỹ thuật đi cùng <span class="gradient-text">tư duy thẩm mỹ.</span></h2>
-<p class="section-copy" data-i18n="skills.copy">Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.</p>
+<p class="section-copy" data-i18n="skills.copy">Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất, Google Business Profile, quảng cáo Google và Meta, cùng việc triển khai sản phẩm trong môi trường thực tế.</p>
 </div>
-<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail" data-i18n="skills.d1">Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail" data-i18n="skills.d2">Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail" data-i18n="skills.d3">Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">React, Next.js, Node.js &amp; Firebase</h3><span class="expertise-level">Modern Stack</span><p class="expertise-detail" data-i18n="skills.d4">Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail" data-i18n="skills.d5">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail" data-i18n="skills.d6">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">07</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail" data-i18n="skills.d7">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article></div>
+<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail" data-i18n="skills.d1">Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail" data-i18n="skills.d2">Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail" data-i18n="skills.d3">Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">React, Next.js, Node.js &amp; Firebase</h3><span class="expertise-level">Modern Stack</span><p class="expertise-detail" data-i18n="skills.d4">Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail" data-i18n="skills.d5">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail" data-i18n="skills.d6">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">07</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail" data-i18n="skills.d7">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article><article class="expertise-item">
+<span class="expertise-index">08</span>
+<h3 class="expertise-name">Google Business Profile &amp; Digital Ads</h3>
+<span class="expertise-level">Growth Support</span>
+<p class="expertise-detail" data-i18n="skills.d8">Hỗ trợ xác minh Google Business Profile, xử lý lỗi không đăng được bài, review bị ẩn và các vấn đề vận hành hồ sơ; đồng thời triển khai Google Ads, Facebook Ads và Instagram Ads.</p>
+</article></div>
 </div>
 </section>
 <section aria-labelledby="process-title" class="section" id="process">
@@ -4090,7 +4153,7 @@
 <time class="timeline-date" data-i18n="experience.now" datetime="2026">Hiện tại</time>
 <h3>Creative Full-stack Developer</h3>
 <div class="timeline-company">TD TRANSACTION LLC · SpotOn Agent</div>
-<p data-i18n="experience.d1">Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; đồng thời xây dựng motion experience cho merchant trong lĩnh vực thanh toán và marketing.</p>
+<p data-i18n="experience.d1">Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; xây dựng motion experience, hỗ trợ Google Business Profile, xác minh hồ sơ, xử lý lỗi bài đăng hoặc review bị ẩn, đồng thời triển khai Google Ads và quảng cáo trên Facebook, Instagram cho merchant.</p>
 </article>
 <article class="timeline-item">
 <time class="timeline-date" data-i18n="experience.growth">Giai đoạn phát triển</time>
@@ -4113,7 +4176,7 @@
 <div class="cta-content">
 <div class="section-kicker" data-i18n="contact.kicker" style="justify-content:center;">Start A Project</div>
 <h2 class="cta-title" data-i18n-html="contact.title" id="contact-title">Có một ý tưởng đủ lớn? Hãy biến nó thành <span class="gradient-text">trải nghiệm thật.</span></h2>
-<p class="cta-copy" data-i18n="contact.copy">Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.</p>
+<p class="cta-copy" data-i18n="contact.copy">Sẵn sàng đồng hành cùng các dự án cần giải pháp hoàn chỉnh: website full-stack, dữ liệu có cấu trúc, motion tinh tế, Google Business Profile, Google Ads, Facebook Ads, Instagram Ads và hỗ trợ vận hành digital.</p>
 <div class="cta-actions"><a class="btn btn-primary magnetic" href="mailto:hienlp17032001@gmail.com"><span data-i18n="contact.email">Gửi email hợp tác</span><i class="fa-solid fa-envelope"></i></a><a aria-label="Gọi cho Phương Hiển IT" class="btn btn-secondary magnetic" href="tel:+84364003638"><span data-i18n="contact.phone">0364 003 638</span><i class="fa-solid fa-phone"></i></a><a aria-label="Xem GitHub của Phương Hiển IT" class="btn btn-secondary magnetic" href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.github">Xem GitHub</span><i class="fa-brands fa-github"></i></a><a aria-label="Facebook Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.facebook">Facebook</span><i class="fa-brands fa-facebook-f"></i></a><a aria-label="Instagram Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.instagram">Instagram</span><i class="fa-brands fa-instagram"></i></a></div>
 </div>
 </div>
@@ -4126,7 +4189,7 @@
 <div class="footer-brand">
 <img alt="Logo Phương Hiển IT" class="footer-logo" decoding="async" height="76" loading="lazy" src="https://phuonghienit.netlify.app/image/logo.png" width="76"/>
 <h2>PHƯƠNG HIỂN<span class="gradient-text">.IT</span></h2>
-<p data-i18n="footer.copy">Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, Three.js, GSAP, UI/UX, technical SEO và triển khai thực tế.</p>
+<p data-i18n="footer.copy">Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, technical SEO, Google Business Profile, Google Ads và quảng cáo Facebook, Instagram.</p>
 <address>
 <a aria-label="Gửi email cho Phương Hiển IT" href="mailto:hienlp17032001@gmail.com">
               hienlp17032001@gmail.com
@@ -4164,7 +4227,7 @@
 <script>(() => {
   "use strict";
 
-  const translations = {"vi": {"preloader.role": "Creative Full-stack Developer", "preloader.loading": "Đang tải trải nghiệm", "brand.role": "Creative Full-stack Developer", "nav.about": "Giới thiệu", "nav.projects": "Dự án", "nav.skills": "Kỹ năng", "nav.experience": "Kinh nghiệm", "nav.start": "Bắt đầu dự án", "hero.availability": "<span class=\"availability-dot\"></span>Sẵn sàng cho những dự án khác biệt", "hero.description": "Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại, ổn định và có khả năng mở rộng. Hiện tôi đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent trong lĩnh vực giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.", "hero.projects": "Khám phá dự án", "hero.contact": "Liên hệ hợp tác", "hero.stack": "React, Next.js, Node.js & Firebase", "hero.motion": "3D Web & Motion Experience", "hero.scroll": "Scroll để khám phá", "about.kicker": "Hồ sơ lập trình viên", "about.title": "Không chỉ làm giao diện. Tôi xây dựng <span class=\"gradient-text\">toàn bộ hệ thống.</span>", "about.copy": "Tôi kết hợp tư duy sản phẩm, kiến trúc front-end, logic back-end, API, database, UI/UX và motion để tạo ra hệ thống web vừa đẹp, vừa vận hành hiệu quả và dễ mở rộng.", "about.mini": "Design × Code × Motion", "about.cardTitle": "Tạo dấu ấn riêng cho từng thương hiệu.", "about.systemTitle": "Tư duy hệ thống từ giao diện đến dữ liệu", "about.systemCopy": "Tôi không chỉ hoàn thành phần nhìn của website. Mỗi dự án được phân tích từ mục tiêu kinh doanh, luồng người dùng, kiến trúc dữ liệu, API, bảo mật, hiệu suất đến khả năng bảo trì. Chuyển động và 3D được sử dụng có chủ đích để nâng cao trải nghiệm thay vì chỉ để trang trí.", "about.stat1": "Năm kinh nghiệm phát triển website và trải nghiệm tương tác.", "about.stat2": "Giao diện, landing page và hệ thống digital đã triển khai.", "about.stat3": "Nhóm kỹ năng từ UI/UX, animation đến tối ưu hiệu suất.", "about.stat4": "Tập trung vào chi tiết, tính ổn định và trải nghiệm thực tế.", "about.company": "Tham gia phát triển website, landing page, hệ thống quản trị, luồng dữ liệu và trải nghiệm digital phục vụ merchant trong hệ sinh thái giải pháp thanh toán và marketing của SpotOn Agent.", "projects.kicker": "Dự án nổi bật", "projects.title": "Những dự án được tạo ra để <span class=\"gradient-text\">gây ấn tượng.</span>", "projects.count": "<strong>04</strong> / Dự án tiêu biểu", "projects.p1": "Nền tảng giới thiệu giải pháp POS và merchant services, kết hợp giao diện chuyển đổi cao, biểu mẫu dữ liệu, tích hợp API, motion storytelling và trải nghiệm 3D.", "projects.p2": "Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.", "projects.p3": "Ứng dụng dashboard full-stack để tổ chức dữ liệu marketing và vận hành, với authentication, API, database, phân quyền và giao diện trực quan dễ mở rộng.", "projects.p4": "Phòng thử nghiệm Three.js, WebGL, particle, shader, scroll choreography và micro-interaction để tạo ngôn ngữ chuyển động riêng cho sản phẩm số.", "skills.kicker": "Năng lực chuyên môn", "skills.title": "Kỹ năng kỹ thuật đi cùng <span class=\"gradient-text\">tư duy thẩm mỹ.</span>", "skills.copy": "Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.", "skills.d1": "Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.", "skills.d2": "Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.", "skills.d3": "Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.", "skills.d4": "Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.", "skills.d5": "GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.", "skills.d6": "Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.", "skills.d7": "Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.", "process.kicker": "Quy trình làm việc", "process.title": "Quy trình rõ ràng. Kết quả <span class=\"gradient-text\">khác biệt.</span>", "process.t1": "Khám phá bài toán", "process.t2": "Thiết kế kiến trúc", "process.t3": "Phát triển full-stack", "process.t4": "Kiểm thử & triển khai", "process.d1": "Làm rõ mục tiêu kinh doanh, người dùng, dữ liệu, chức năng, nội dung và các chỉ số thành công.", "process.d2": "Xây dựng sitemap, user flow, data model, API contract, component system và chiến lược triển khai.", "process.d3": "Kết nối giao diện, logic server, database, authentication, motion và các tích hợp cần thiết thành một hệ thống hoàn chỉnh.", "process.d4": "Kiểm tra bảo mật cơ bản, responsive, hiệu suất, SEO, lỗi dữ liệu và độ ổn định trước khi đưa sản phẩm lên môi trường thật.", "experience.heading": "Kinh nghiệm làm việc của Phương Hiển IT", "experience.summary": "Năm liên tục học hỏi, thử nghiệm và phát triển những sản phẩm số có tính thẩm mỹ, hiệu suất và giá trị kinh doanh.", "experience.now": "Hiện tại", "experience.growth": "Giai đoạn phát triển", "experience.foundation": "Nền tảng", "experience.d1": "Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; đồng thời xây dựng motion experience cho merchant trong lĩnh vực thanh toán và marketing.", "experience.d2": "Xây dựng website doanh nghiệp, CMS, tính năng quản trị, luồng đặt lịch, tích hợp dữ liệu và cấu trúc local SEO với trọng tâm mobile-first và khả năng vận hành thực tế.", "experience.d3": "Đào sâu JavaScript, kiến trúc web, API, database, CSS animation, GSAP, Three.js và creative coding để kết hợp kỹ thuật full-stack với trải nghiệm hình ảnh khác biệt.", "contact.kicker": "Bắt đầu dự án", "contact.title": "Có một ý tưởng đủ lớn? Hãy biến nó thành <span class=\"gradient-text\">trải nghiệm thật.</span>", "contact.copy": "Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.", "contact.email": "Gửi email hợp tác", "contact.phone": "0364 003 638", "contact.github": "Xem GitHub", "contact.facebook": "Facebook", "contact.instagram": "Instagram", "footer.copy": "Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, Three.js, GSAP, UI/UX, technical SEO và triển khai thực tế.", "footer.navigation": "Điều hướng", "footer.connect": "Kết nối", "footer.email": "Email", "footer.phone": "Điện thoại", "footer.copyright": "Phương Hiển IT. Được xây dựng bằng code, motion và sự tò mò.", "footer.backTop": "Về đầu trang"}, "en": {"preloader.role": "Creative Full-stack Developer", "preloader.loading": "Loading experience", "brand.role": "Creative Full-stack Developer", "nav.about": "About", "nav.projects": "Projects", "nav.skills": "Skills", "nav.experience": "Experience", "nav.start": "Start a project", "hero.availability": "<span class=\"availability-dot\"></span>Available for distinctive digital projects", "hero.description": "I am a Creative Full-stack Developer with <strong>5 years of experience</strong>, building web products from interfaces and business logic to APIs and data. I combine <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion, and UI/UX</strong> to create modern, reliable, and scalable experiences. I currently work with <strong>TD TRANSACTION LLC</strong> — a SpotOn Agent providing payment and marketing solutions for businesses in the United States.", "hero.projects": "Explore projects", "hero.contact": "Work with me", "hero.stack": "React, Next.js, Node.js & Firebase", "hero.motion": "3D Web & Motion Experience", "hero.scroll": "Scroll to explore", "about.kicker": "Developer Profile", "about.title": "I do more than interfaces. I build <span class=\"gradient-text\">complete systems.</span>", "about.copy": "I combine product thinking, front-end architecture, back-end logic, APIs, databases, UI/UX, and motion to build web systems that look distinctive, perform reliably, and scale efficiently.", "about.mini": "Design × Code × Motion", "about.cardTitle": "A distinct digital identity for every brand.", "about.systemTitle": "System thinking from interface to data", "about.systemCopy": "I do more than complete the visual layer. Every project is considered through business goals, user flows, data architecture, APIs, security, performance, and maintainability. Motion and 3D are used purposefully to improve the experience rather than simply decorate it.", "about.stat1": "Years of experience developing websites and interactive experiences.", "about.stat2": "Interfaces, landing pages, and digital systems delivered.", "about.stat3": "Skill areas spanning UI/UX, animation, systems, and performance.", "about.stat4": "Focused on detail, stability, and real-world user experience.", "about.company": "Contributing to websites, landing pages, management systems, data flows, and digital experiences for merchants within a SpotOn Agent payment and marketing ecosystem.", "projects.kicker": "Selected Works", "projects.title": "Projects designed to make a <span class=\"gradient-text\">lasting impression.</span>", "projects.count": "<strong>04</strong> / Featured projects", "projects.p1": "A platform for POS and merchant-service solutions combining conversion-focused interfaces, data forms, API integrations, motion storytelling, and 3D experiences.", "projects.p2": "A website system for nail salons featuring CMS content management, service categories, booking journeys, local SEO, and responsive experiences across devices.", "projects.p3": "A full-stack dashboard application for marketing and operational data, with authentication, APIs, databases, permissions, and an extensible visual interface.", "projects.p4": "An experimental lab for Three.js, WebGL, particles, shaders, scroll choreography, and micro-interactions that create a distinctive motion language.", "skills.kicker": "Core Expertise", "skills.title": "Technical depth paired with <span class=\"gradient-text\">visual thinking.</span>", "skills.copy": "My capabilities span interfaces, servers, APIs, and databases, as well as motion, 3D, SEO, performance, and production deployment.", "skills.d1": "Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility, and browser compatibility.", "skills.d2": "Server-side logic with Node.js, REST APIs, validation, authentication, authorization, Firebase, and third-party service integrations.", "skills.d3": "Data modeling with Firebase Firestore and traditional databases, including collections, queries, data integrity, and client-server synchronization.", "skills.d4": "Applications built with React.js, Next.js routing and rendering, Node.js APIs and business logic, plus Firebase Authentication, Firestore, Storage, and Hosting.", "skills.d5": "GSAP, ScrollTrigger, 3D scenes, particle systems, camera interaction, shader concepts, and effect optimization across devices.", "skills.d6": "Information architecture, layout hierarchy, design systems, user flows, conversion journeys, and scalable product structures.", "skills.d7": "Core Web Vitals, semantic SEO, caching, loading strategies, foundational security, responsive testing, version control, and deployment.", "process.kicker": "Working Process", "process.title": "A clear process. A <span class=\"gradient-text\">distinct result.</span>", "process.t1": "Discover the problem", "process.t2": "Design the architecture", "process.t3": "Build the full stack", "process.t4": "Test and deploy", "process.d1": "Clarify business goals, users, data, features, content, and the metrics that define success.", "process.d2": "Create the sitemap, user flow, data model, API contract, component system, and deployment strategy.", "process.d3": "Connect the interface, server logic, database, authentication, motion, and required integrations into one complete system.", "process.d4": "Review foundational security, responsiveness, performance, SEO, data integrity, and production stability before launch.", "experience.heading": "Phuong Hien IT professional experience", "experience.summary": "Years of continuous learning, experimentation, and building digital products with visual quality, performance, and business value.", "experience.now": "Present", "experience.growth": "Growth stage", "experience.foundation": "Foundation", "experience.d1": "Developing websites, landing pages, and digital systems from interfaces to servers, APIs, and data, while creating motion experiences for merchants in payment and marketing.", "experience.d2": "Building business websites, CMS features, administration tools, booking flows, data integrations, and local SEO structures with a mobile-first, production-focused approach.", "experience.d3": "Deepening expertise in JavaScript, web architecture, APIs, databases, CSS animation, GSAP, Three.js, and creative coding to unite full-stack engineering with distinctive visual experiences.", "contact.kicker": "Start A Project", "contact.title": "Have an ambitious idea? Let’s turn it into a <span class=\"gradient-text\">real experience.</span>", "contact.copy": "Ready to support projects that need a complete solution: strong interfaces, clear back-end logic, structured data, refined motion, and professional production quality.", "contact.email": "Send an email", "contact.phone": "0364 003 638", "contact.github": "View GitHub", "contact.facebook": "Facebook", "contact.instagram": "Instagram", "footer.copy": "Creative Full-stack Developer building web products from interfaces, APIs, and databases to motion, Three.js, GSAP, UI/UX, technical SEO, and production deployment.", "footer.navigation": "Navigation", "footer.connect": "Connect", "footer.email": "Email", "footer.phone": "Phone", "footer.copyright": "Phuong Hien IT. Crafted with code, motion, and curiosity.", "footer.backTop": "Back to top"}};
+  const translations = {"vi":{"preloader.role":"Creative Full-stack Developer","preloader.loading":"Đang tải trải nghiệm","brand.role":"Creative Full-stack Developer","nav.about":"Giới thiệu","nav.projects":"Dự án","nav.skills":"Kỹ năng","nav.experience":"Kinh nghiệm","nav.start":"Bắt đầu dự án","hero.availability":"<span class=\"availability-dot\"></span>Sẵn sàng cho những dự án khác biệt","hero.description":"Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại và có khả năng mở rộng. Bên cạnh phát triển web, tôi còn hỗ trợ <strong>Google Business Profile, Google Ads, Facebook Ads, Instagram Ads</strong> và xử lý các vấn đề như xác minh hồ sơ, không đăng được bài hoặc review bị ẩn. Hiện tôi đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent cung cấp giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.","hero.projects":"Khám phá dự án","hero.contact":"Liên hệ hợp tác","hero.stack":"React, Next.js, Node.js & Firebase","hero.motion":"3D Web & Motion Experience","hero.scroll":"Scroll để khám phá","about.kicker":"Hồ sơ lập trình viên","about.title":"Không chỉ làm giao diện. Tôi xây dựng <span class=\"gradient-text\">toàn bộ hệ thống.</span>","about.copy":"Tôi kết hợp tư duy sản phẩm, kiến trúc front-end, logic back-end, API, database, UI/UX và motion để tạo ra hệ thống web vừa đẹp, vừa vận hành hiệu quả và dễ mở rộng.","about.mini":"Design × Code × Motion","about.cardTitle":"Tạo dấu ấn riêng cho từng thương hiệu.","about.systemTitle":"Tư duy hệ thống từ giao diện đến dữ liệu","about.systemCopy":"Tôi không chỉ hoàn thành phần nhìn của website. Mỗi dự án được phân tích từ mục tiêu kinh doanh, luồng người dùng, kiến trúc dữ liệu, API, bảo mật, hiệu suất đến khả năng bảo trì. Chuyển động và 3D được sử dụng có chủ đích để nâng cao trải nghiệm thay vì chỉ để trang trí.","about.stat1":"Năm kinh nghiệm phát triển website và trải nghiệm tương tác.","about.stat2":"Giao diện, landing page và hệ thống digital đã triển khai.","about.stat3":"Nhóm kỹ năng từ UI/UX, animation đến tối ưu hiệu suất.","about.stat4":"Tập trung vào chi tiết, tính ổn định và trải nghiệm thực tế.","about.company":"Tham gia phát triển website, landing page, hệ thống quản trị và trải nghiệm digital cho merchant trong hệ sinh thái SpotOn Agent; đồng thời hỗ trợ xác minh Google Business Profile, xử lý lỗi không đăng được bài, review bị ẩn và triển khai Google Ads, Facebook Ads, Instagram Ads.","projects.kicker":"Dự án nổi bật","projects.title":"Những dự án được tạo ra để <span class=\"gradient-text\">gây ấn tượng.</span>","projects.count":"<strong>04</strong> / Dự án tiêu biểu","projects.p1":"Nền tảng giới thiệu giải pháp POS và merchant services, kết hợp giao diện chuyển đổi cao, biểu mẫu dữ liệu, tích hợp API, motion storytelling và trải nghiệm 3D.","projects.p2":"Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.","projects.p3":"Ứng dụng dashboard full-stack để tổ chức dữ liệu marketing và vận hành, với authentication, API, database, phân quyền và giao diện trực quan dễ mở rộng.","projects.p4":"Phòng thử nghiệm Three.js, WebGL, particle, shader, scroll choreography và micro-interaction để tạo ngôn ngữ chuyển động riêng cho sản phẩm số.","skills.kicker":"Năng lực chuyên môn","skills.title":"Kỹ năng kỹ thuật đi cùng <span class=\"gradient-text\">tư duy thẩm mỹ.</span>","skills.copy":"Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất, Google Business Profile, quảng cáo Google và Meta, cùng việc triển khai sản phẩm trong môi trường thực tế.","skills.d1":"Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.","skills.d2":"Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.","skills.d3":"Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.","skills.d4":"Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.","skills.d5":"GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.","skills.d6":"Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.","skills.d7":"Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.","process.kicker":"Quy trình làm việc","process.title":"Quy trình rõ ràng. Kết quả <span class=\"gradient-text\">khác biệt.</span>","process.t1":"Khám phá bài toán","process.t2":"Thiết kế kiến trúc","process.t3":"Phát triển full-stack","process.t4":"Kiểm thử & triển khai","process.d1":"Làm rõ mục tiêu kinh doanh, người dùng, dữ liệu, chức năng, nội dung và các chỉ số thành công.","process.d2":"Xây dựng sitemap, user flow, data model, API contract, component system và chiến lược triển khai.","process.d3":"Kết nối giao diện, logic server, database, authentication, motion và các tích hợp cần thiết thành một hệ thống hoàn chỉnh.","process.d4":"Kiểm tra bảo mật cơ bản, responsive, hiệu suất, SEO, lỗi dữ liệu và độ ổn định trước khi đưa sản phẩm lên môi trường thật.","experience.heading":"Kinh nghiệm làm việc của Phương Hiển IT","experience.summary":"Năm liên tục học hỏi, thử nghiệm và phát triển những sản phẩm số có tính thẩm mỹ, hiệu suất và giá trị kinh doanh.","experience.now":"Hiện tại","experience.growth":"Giai đoạn phát triển","experience.foundation":"Nền tảng","experience.d1":"Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; xây dựng motion experience, hỗ trợ Google Business Profile, xác minh hồ sơ, xử lý lỗi bài đăng hoặc review bị ẩn, đồng thời triển khai Google Ads và quảng cáo trên Facebook, Instagram cho merchant.","experience.d2":"Xây dựng website doanh nghiệp, CMS, tính năng quản trị, luồng đặt lịch, tích hợp dữ liệu và cấu trúc local SEO với trọng tâm mobile-first và khả năng vận hành thực tế.","experience.d3":"Đào sâu JavaScript, kiến trúc web, API, database, CSS animation, GSAP, Three.js và creative coding để kết hợp kỹ thuật full-stack với trải nghiệm hình ảnh khác biệt.","contact.kicker":"Bắt đầu dự án","contact.title":"Có một ý tưởng đủ lớn? Hãy biến nó thành <span class=\"gradient-text\">trải nghiệm thật.</span>","contact.copy":"Sẵn sàng đồng hành cùng các dự án cần giải pháp hoàn chỉnh: website full-stack, dữ liệu có cấu trúc, motion tinh tế, Google Business Profile, Google Ads, Facebook Ads, Instagram Ads và hỗ trợ vận hành digital.","contact.email":"Gửi email hợp tác","contact.phone":"0364 003 638","contact.github":"Xem GitHub","contact.facebook":"Facebook","contact.instagram":"Instagram","footer.copy":"Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, technical SEO, Google Business Profile, Google Ads và quảng cáo Facebook, Instagram.","footer.navigation":"Điều hướng","footer.connect":"Kết nối","footer.email":"Email","footer.phone":"Điện thoại","footer.copyright":"Phương Hiển IT. Được xây dựng bằng code, motion và sự tò mò.","footer.backTop":"Về đầu trang","skills.d8":"Hỗ trợ xác minh Google Business Profile, xử lý lỗi không đăng được bài, review bị ẩn và các vấn đề vận hành hồ sơ; đồng thời triển khai Google Ads, Facebook Ads và Instagram Ads."},"en":{"preloader.role":"Creative Full-stack Developer","preloader.loading":"Loading experience","brand.role":"Creative Full-stack Developer","nav.about":"About","nav.projects":"Projects","nav.skills":"Skills","nav.experience":"Experience","nav.start":"Start a project","hero.availability":"<span class=\"availability-dot\"></span>Available for distinctive digital projects","hero.description":"I am a Creative Full-stack Developer with <strong>5 years of experience</strong>, building web products from interfaces and business logic to APIs and data. I combine <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion, and UI/UX</strong> to create modern and scalable experiences. I also support <strong>Google Business Profile, Google Ads, Facebook Ads, and Instagram Ads</strong>, including verification assistance, posting issues, and hidden-review troubleshooting. I currently work with <strong>TD TRANSACTION LLC</strong> — a SpotOn Agent providing payment and marketing solutions for businesses in the United States.","hero.projects":"Explore projects","hero.contact":"Work with me","hero.stack":"React, Next.js, Node.js & Firebase","hero.motion":"3D Web & Motion Experience","hero.scroll":"Scroll to explore","about.kicker":"Developer Profile","about.title":"I do more than interfaces. I build <span class=\"gradient-text\">complete systems.</span>","about.copy":"I combine product thinking, front-end architecture, back-end logic, APIs, databases, UI/UX, and motion to build web systems that look distinctive, perform reliably, and scale efficiently.","about.mini":"Design × Code × Motion","about.cardTitle":"A distinct digital identity for every brand.","about.systemTitle":"System thinking from interface to data","about.systemCopy":"I do more than complete the visual layer. Every project is considered through business goals, user flows, data architecture, APIs, security, performance, and maintainability. Motion and 3D are used purposefully to improve the experience rather than simply decorate it.","about.stat1":"Years of experience developing websites and interactive experiences.","about.stat2":"Interfaces, landing pages, and digital systems delivered.","about.stat3":"Skill areas spanning UI/UX, animation, systems, and performance.","about.stat4":"Focused on detail, stability, and real-world user experience.","about.company":"Contributing to websites, landing pages, management systems, and digital experiences for merchants within a SpotOn Agent ecosystem, while supporting Google Business Profile verification, posting issues, hidden reviews, and Google, Facebook, and Instagram advertising.","projects.kicker":"Selected Works","projects.title":"Projects designed to make a <span class=\"gradient-text\">lasting impression.</span>","projects.count":"<strong>04</strong> / Featured projects","projects.p1":"A platform for POS and merchant-service solutions combining conversion-focused interfaces, data forms, API integrations, motion storytelling, and 3D experiences.","projects.p2":"A website system for nail salons featuring CMS content management, service categories, booking journeys, local SEO, and responsive experiences across devices.","projects.p3":"A full-stack dashboard application for marketing and operational data, with authentication, APIs, databases, permissions, and an extensible visual interface.","projects.p4":"An experimental lab for Three.js, WebGL, particles, shaders, scroll choreography, and micro-interactions that create a distinctive motion language.","skills.kicker":"Core Expertise","skills.title":"Technical depth paired with <span class=\"gradient-text\">visual thinking.</span>","skills.copy":"My capabilities span interfaces, servers, APIs, and databases, as well as motion, 3D, SEO, performance, Google Business Profile, Google and Meta advertising, and production deployment.","skills.d1":"Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility, and browser compatibility.","skills.d2":"Server-side logic with Node.js, REST APIs, validation, authentication, authorization, Firebase, and third-party service integrations.","skills.d3":"Data modeling with Firebase Firestore and traditional databases, including collections, queries, data integrity, and client-server synchronization.","skills.d4":"Applications built with React.js, Next.js routing and rendering, Node.js APIs and business logic, plus Firebase Authentication, Firestore, Storage, and Hosting.","skills.d5":"GSAP, ScrollTrigger, 3D scenes, particle systems, camera interaction, shader concepts, and effect optimization across devices.","skills.d6":"Information architecture, layout hierarchy, design systems, user flows, conversion journeys, and scalable product structures.","skills.d7":"Core Web Vitals, semantic SEO, caching, loading strategies, foundational security, responsive testing, version control, and deployment.","process.kicker":"Working Process","process.title":"A clear process. A <span class=\"gradient-text\">distinct result.</span>","process.t1":"Discover the problem","process.t2":"Design the architecture","process.t3":"Build the full stack","process.t4":"Test and deploy","process.d1":"Clarify business goals, users, data, features, content, and the metrics that define success.","process.d2":"Create the sitemap, user flow, data model, API contract, component system, and deployment strategy.","process.d3":"Connect the interface, server logic, database, authentication, motion, and required integrations into one complete system.","process.d4":"Review foundational security, responsiveness, performance, SEO, data integrity, and production stability before launch.","experience.heading":"Phuong Hien IT professional experience","experience.summary":"Years of continuous learning, experimentation, and building digital products with visual quality, performance, and business value.","experience.now":"Present","experience.growth":"Growth stage","experience.foundation":"Foundation","experience.d1":"Developing websites, landing pages, and digital systems from interfaces to servers, APIs, and data; creating motion experiences, supporting Google Business Profile verification and troubleshooting for posting or hidden reviews, and running Google, Facebook, and Instagram advertising for merchants.","experience.d2":"Building business websites, CMS features, administration tools, booking flows, data integrations, and local SEO structures with a mobile-first, production-focused approach.","experience.d3":"Deepening expertise in JavaScript, web architecture, APIs, databases, CSS animation, GSAP, Three.js, and creative coding to unite full-stack engineering with distinctive visual experiences.","contact.kicker":"Start A Project","contact.title":"Have an ambitious idea? Let’s turn it into a <span class=\"gradient-text\">real experience.</span>","contact.copy":"Ready to support projects that need a complete solution: full-stack websites, structured data, refined motion, Google Business Profile, Google Ads, Facebook Ads, Instagram Ads, and ongoing digital operations support.","contact.email":"Send an email","contact.phone":"0364 003 638","contact.github":"View GitHub","contact.facebook":"Facebook","contact.instagram":"Instagram","footer.copy":"Creative Full-stack Developer building web products from interfaces, APIs, and databases to motion, technical SEO, Google Business Profile, Google Ads, Facebook Ads, and Instagram Ads.","footer.navigation":"Navigation","footer.connect":"Connect","footer.email":"Email","footer.phone":"Phone","footer.copyright":"Phuong Hien IT. Crafted with code, motion, and curiosity.","footer.backTop":"Back to top","skills.d8":"Google Business Profile verification support, troubleshooting for posting issues and hidden reviews, plus Google Ads, Facebook Ads, and Instagram Ads implementation."}};
   const pageMeta = {
     vi: {
       title: "Phương Hiển IT | Creative Full-stack Developer",
@@ -4765,5 +4828,7 @@
       }
     })();
   </script>
+<noscript>
+
 </body>
 </html>
