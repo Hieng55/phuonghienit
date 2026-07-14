@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="vi">
+<html data-lang="vi" data-theme="dark" dir="ltr" lang="vi">
 <head>
 <!-- Core SEO -->
 <meta charset="utf-8"/>
@@ -12,7 +12,7 @@
 <meta content="Phương Hiển IT" name="generator"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <meta content="telephone=no" name="format-detection"/>
-<meta content="dark" name="color-scheme"/>
+<meta content="light dark" name="color-scheme"/>
 <meta content="#07090d" name="theme-color"/>
 <!-- Search engine directives -->
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
@@ -363,7 +363,20 @@
     }
   ]
 }
-</script><style>
+</script><script>(() => {
+  try {
+    const savedTheme = localStorage.getItem("ph-theme") || "dark";
+    const savedLanguage = localStorage.getItem("ph-language") || "vi";
+    document.documentElement.dataset.theme = savedTheme;
+    document.documentElement.dataset.lang = savedLanguage;
+    document.documentElement.lang = savedLanguage;
+  } catch (error) {
+    document.documentElement.dataset.theme = "dark";
+    document.documentElement.dataset.lang = "vi";
+    document.documentElement.lang = "vi";
+  }
+})();</script>
+<style>
     :root {
       --bg: #06080d;
       --bg-soft: #0b1018;
@@ -3034,16 +3047,201 @@
         display: none;
       }
     }
-  </style>
+  
+    /* Theme and language controls */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .ui-control {
+      display: inline-flex;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.055);
+      cursor: pointer;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
+    }
+
+    .ui-control:hover {
+      transform: translateY(-2px);
+      border-color: rgba(32, 217, 255, .45);
+      background: rgba(255, 255, 255, .11);
+    }
+
+    .language-toggle {
+      width: auto;
+      min-width: 60px;
+      padding: 0 11px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .language-current {
+      min-width: 18px;
+      text-align: center;
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --bg-soft: #ffffff;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: rgba(255, 255, 255, 0.92);
+      --line: rgba(15, 23, 42, 0.14);
+      --line-soft: rgba(15, 23, 42, 0.085);
+      --text: #0c1424;
+      --muted: #5f6c80;
+      --shadow: 0 28px 70px rgba(35, 48, 72, 0.14);
+    }
+
+    html[data-theme="light"] body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.14), transparent 32%),
+        radial-gradient(circle at 83% 33%, rgba(32, 217, 255, 0.13), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(131, 255, 203, 0.13), transparent 34%),
+        var(--bg);
+    }
+
+    html[data-theme="light"] .noise {
+      opacity: .025;
+      mix-blend-mode: multiply;
+    }
+
+    html[data-theme="light"] #webgl {
+      opacity: .52;
+    }
+
+    html[data-theme="light"] .glass {
+      border-color: var(--line);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .55)),
+        rgba(255, 255, 255, .66);
+      box-shadow: var(--shadow);
+    }
+
+    html[data-theme="light"] .site-header.scrolled {
+      border-bottom-color: var(--line-soft);
+      background: rgba(243, 246, 251, .82);
+    }
+
+    html[data-theme="light"] .nav-link,
+    html[data-theme="light"] .brand,
+    html[data-theme="light"] .back-top,
+    html[data-theme="light"] .hero-description strong,
+    html[data-theme="light"] .about-text-card h3,
+    html[data-theme="light"] .company-card strong,
+    html[data-theme="light"] .footer-column h3,
+    html[data-theme="light"] .footer-brand h2 {
+      color: var(--text);
+    }
+
+    html[data-theme="light"] .hero-title .outline {
+      -webkit-text-stroke-color: rgba(15, 23, 42, .48);
+    }
+
+    html[data-theme="light"] .availability {
+      color: #11634e;
+      border-color: rgba(19, 145, 103, .22);
+      background: rgba(19, 145, 103, .08);
+    }
+
+    html[data-theme="light"] .nav-cta,
+    html[data-theme="light"] .btn-secondary,
+    html[data-theme="light"] .ui-control,
+    html[data-theme="light"] .hero-meta-icon {
+      background: rgba(255, 255, 255, .68);
+    }
+
+    html[data-theme="light"] .btn-primary {
+      color: #fff;
+      background: linear-gradient(110deg, #111827, #27344b);
+    }
+
+    html[data-theme="light"] .code-panel {
+      color: #f7f8fb;
+      border-color: rgba(255, 255, 255, .14);
+      background:
+        linear-gradient(135deg, rgba(22, 28, 43, .96), rgba(7, 10, 17, .94)),
+        #090d14;
+    }
+
+    html[data-theme="light"] .code-panel .developer-card {
+      color: #f7f8fb;
+      background:
+        linear-gradient(135deg, rgba(24, 31, 47, .88), rgba(8, 12, 20, .78)),
+        rgba(8, 12, 20, .82);
+    }
+
+    html[data-theme="light"] .code-panel .developer-card h3 {
+      color: #fff;
+    }
+
+    html[data-theme="light"] .expertise-item {
+      border-color: var(--line);
+    }
+
+    html[data-theme="light"] .footer-brand address a {
+      color: #087f98;
+    }
+
+    html[data-theme="light"] ::selection {
+      color: #071018;
+      background: #65e8bd;
+    }
+
+    @media (max-width: 900px) {
+      html[data-theme="light"] .nav {
+        background: rgba(248, 250, 253, .96);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .header-actions {
+        gap: 6px;
+      }
+
+      .ui-control,
+      .menu-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+      }
+
+      .language-toggle {
+        min-width: 52px;
+        padding-inline: 8px;
+        font-size: .66rem;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .brand-copy {
+        display: none;
+      }
+    }
+</style>
 </head>
 <body class="is-loading">
 <div aria-hidden="true" class="preloader">
 <div class="preloader-inner">
-<div class="preloader-logo">PHƯƠNG HIỂN<span>.</span>IT</div>
+<div class="preloader-logo">PHUONG HIEN<span>.</span>IT</div>
 <div class="preloader-line"></div>
 <div class="preloader-meta">
-<span>Creative Full-stack Developer</span>
-<span>Loading Experience</span>
+<span data-i18n="preloader.role">Creative Full-stack Developer</span>
+<span data-i18n="preloader.loading">Loading Experience</span>
 </div>
 </div>
 </div>
@@ -3060,56 +3258,56 @@
 </span>
 <span class="brand-copy">
           Phương Hiển IT
-          <small>Creative Full-stack Developer</small>
+          <small data-i18n="brand.role">Creative Full-stack Developer</small>
 </span>
 </a>
 <nav aria-label="Điều hướng chính" class="nav">
-<a class="nav-link" href="#about">Giới thiệu</a>
-<a class="nav-link" href="#projects">Dự án</a>
-<a class="nav-link" href="#skills">Kỹ năng</a>
-<a class="nav-link" href="#experience">Kinh nghiệm</a>
+<a class="nav-link" data-i18n="nav.about" href="#about">Giới thiệu</a>
+<a class="nav-link" data-i18n="nav.projects" href="#projects">Dự án</a>
+<a class="nav-link" data-i18n="nav.skills" href="#skills">Kỹ năng</a>
+<a class="nav-link" data-i18n="nav.experience" href="#experience">Kinh nghiệm</a>
 <a class="nav-cta magnetic" href="#contact">
-<span>Bắt đầu dự án</span>
+<span data-i18n="nav.start">Bắt đầu dự án</span>
 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 </a>
-</nav>
-<button aria-expanded="false" aria-label="Mở menu" class="menu-toggle" type="button">
+</nav><div class="header-actions"><button aria-label="Chuyển sang chế độ sáng" class="ui-control theme-toggle" id="themeToggle" title="Chuyển sang chế độ sáng" type="button"><i aria-hidden="true" class="fa-solid fa-sun"></i><span class="sr-only" id="themeToggleText">Chuyển sang chế độ sáng</span></button><button aria-label="Switch to English" class="ui-control language-toggle" id="languageToggle" title="Switch to English" type="button"><i aria-hidden="true" class="fa-solid fa-language"></i><span class="language-current" id="languageCurrent">VI</span></button><button aria-expanded="false" aria-label="Mở menu" class="menu-toggle" type="button">
 <i class="fa-solid fa-bars-staggered"></i>
-</button>
+</button></div>
+
 </div>
 </header>
 <main>
 <section aria-labelledby="hero-title" class="hero" id="home">
 <div class="container hero-grid">
 <div class="hero-content">
-<div class="availability">
+<div class="availability" data-i18n-html="hero.availability">
 <span class="availability-dot"></span>
             Sẵn sàng cho những dự án khác biệt
           </div>
 <h1 class="hero-title" id="hero-title">
-<span class="line"><span class="line-inner">PHƯƠNG</span></span>
-<span class="line"><span class="line-inner gradient-text">HIỂN IT</span></span>
+<span class="line"><span class="line-inner">PHUONG</span></span>
+<span class="line"><span class="line-inner gradient-text">HIEN IT</span></span>
 <span class="line"><span class="line-inner outline">DEVELOPER</span></span>
 </h1>
-<p class="hero-description">Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>full-stack development, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại, ổn định và có khả năng mở rộng. Hiện đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent trong lĩnh vực giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.</p>
+<p class="hero-description" data-i18n-html="hero.description">Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>full-stack development, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại, ổn định và có khả năng mở rộng. Hiện đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent trong lĩnh vực giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.</p>
 <div class="hero-actions">
 <a class="btn btn-primary magnetic" href="#projects">
-<span>Khám phá dự án</span>
+<span data-i18n="hero.projects">Khám phá dự án</span>
 <i class="fa-solid fa-arrow-down"></i>
 </a>
 <a class="btn btn-secondary magnetic" href="#contact">
-<span>Liên hệ hợp tác</span>
+<span data-i18n="hero.contact">Liên hệ hợp tác</span>
 <i class="fa-solid fa-paper-plane"></i>
 </a>
 </div>
 <div class="hero-meta">
 <div class="hero-meta-item">
 <span class="hero-meta-icon"><i class="fa-solid fa-code"></i></span>
-<span>React, Next.js, Node.js &amp; Firebase</span>
+<span data-i18n="hero.stack">React, Next.js, Node.js &amp; Firebase</span>
 </div>
 <div class="hero-meta-item">
 <span class="hero-meta-icon"><i class="fa-solid fa-cube"></i></span>
-<span>3D Web, Motion &amp; System Design</span>
+<span data-i18n="hero.motion">3D Web, Motion &amp; System Design</span>
 </div>
 </div>
 </div>
@@ -3168,10 +3366,7 @@
 <div class="orbit-chip chip-three"><i class="fa-solid fa-bolt"></i> High Performance</div>
 </div>
 </div>
-<div class="hero-scroll">
-<span class="scroll-mouse"></span>
-        Scroll để khám phá
-      </div>
+<div class="hero-scroll"><span class="scroll-mouse"></span><span data-i18n="hero.scroll">Scroll để khám phá</span></div>
 </section>
 <section aria-label="Công nghệ và nền tảng chuyên môn" class="tech-marquee">
 <div class="marquee-track">
@@ -3182,45 +3377,45 @@
 <section aria-labelledby="about-title" class="section" id="about">
 <div class="container about-grid">
 <div class="about-sticky">
-<div class="section-kicker">Developer Profile</div>
-<h2 class="section-title" id="about-title">Không chỉ làm giao diện. Tôi xây dựng <span class="gradient-text">toàn bộ hệ thống.</span></h2>
-<p class="section-copy">Tôi kết hợp tư duy sản phẩm, kiến trúc front-end, logic back-end, API, database, UI/UX và motion để tạo ra hệ thống web vừa đẹp, vừa vận hành hiệu quả và dễ mở rộng.</p>
+<div class="section-kicker" data-i18n="about.kicker">Developer Profile</div>
+<h2 class="section-title" data-i18n-html="about.title" id="about-title">Không chỉ làm giao diện. Tôi xây dựng <span class="gradient-text">toàn bộ hệ thống.</span></h2>
+<p class="section-copy" data-i18n="about.copy">Tôi kết hợp tư duy sản phẩm, kiến trúc front-end, logic back-end, API, database, UI/UX và motion để tạo ra hệ thống web vừa đẹp, vừa vận hành hiệu quả và dễ mở rộng.</p>
 <div class="about-card glass" style="margin-top: 38px;">
 <div class="about-grid-lines"></div>
 <div class="about-orb"></div>
 <div class="about-card-copy">
-<span class="mini-label">Design × Code × Motion</span>
-<h3>Tạo dấu ấn riêng cho từng thương hiệu.</h3>
+<span class="mini-label" data-i18n="about.mini">Design × Code × Motion</span>
+<h3 data-i18n="about.cardTitle">Tạo dấu ấn riêng cho từng thương hiệu.</h3>
 </div>
 </div>
 </div>
 <div class="about-content">
 <article class="about-text-card glass reveal-card">
-<h3>Tư duy hệ thống từ giao diện đến dữ liệu</h3>
-<p>Tôi không chỉ hoàn thành phần nhìn của website. Mỗi dự án được phân tích từ mục tiêu kinh doanh, luồng người dùng, kiến trúc dữ liệu, API, bảo mật, hiệu suất đến khả năng bảo trì. Chuyển động và 3D được sử dụng có chủ đích để nâng cao trải nghiệm, không che lấp chức năng cốt lõi.</p>
+<h3 data-i18n="about.systemTitle">Tư duy hệ thống từ giao diện đến dữ liệu</h3>
+<p data-i18n="about.systemCopy">Tôi không chỉ hoàn thành phần nhìn của website. Mỗi dự án được phân tích từ mục tiêu kinh doanh, luồng người dùng, kiến trúc dữ liệu, API, bảo mật, hiệu suất đến khả năng bảo trì. Chuyển động và 3D được sử dụng có chủ đích để nâng cao trải nghiệm, không che lấp chức năng cốt lõi.</p>
 </article>
 <div class="stats-grid">
 <article class="stat-card glass reveal-card">
 <div class="stat-number"><span class="counter" data-target="5">0</span><span>+</span></div>
-<p class="stat-label">Năm kinh nghiệm phát triển website và trải nghiệm tương tác.</p>
+<p class="stat-label" data-i18n="about.stat1">Năm kinh nghiệm phát triển website và trải nghiệm tương tác.</p>
 </article>
 <article class="stat-card glass reveal-card">
 <div class="stat-number"><span class="counter" data-target="80">0</span><span>+</span></div>
-<p class="stat-label">Giao diện, landing page và hệ thống digital đã triển khai.</p>
+<p class="stat-label" data-i18n="about.stat2">Giao diện, landing page và hệ thống digital đã triển khai.</p>
 </article>
 <article class="stat-card glass reveal-card">
 <div class="stat-number"><span class="counter" data-target="12">0</span><span>+</span></div>
-<p class="stat-label">Nhóm kỹ năng từ UI/UX, animation đến tối ưu hiệu suất.</p>
+<p class="stat-label" data-i18n="about.stat3">Nhóm kỹ năng từ UI/UX, animation đến tối ưu hiệu suất.</p>
 </article>
 <article class="stat-card glass reveal-card">
 <div class="stat-number"><span class="counter" data-target="100">0</span><span>%</span></div>
-<p class="stat-label">Tập trung vào chi tiết, tính ổn định và trải nghiệm thực tế.</p>
+<p class="stat-label" data-i18n="about.stat4">Tập trung vào chi tiết, tính ổn định và trải nghiệm thực tế.</p>
 </article>
 </div>
 <article class="company-card glass reveal-card">
 <div>
 <strong>TD TRANSACTION LLC</strong>
-<p>Tham gia phát triển website, landing page, hệ thống quản trị, luồng dữ liệu và trải nghiệm digital phục vụ merchant trong hệ sinh thái giải pháp thanh toán và marketing của SpotOn Agent.</p>
+<p data-i18n="about.company">Tham gia phát triển website, landing page, hệ thống quản trị, luồng dữ liệu và trải nghiệm digital phục vụ merchant trong hệ sinh thái giải pháp thanh toán và marketing của SpotOn Agent.</p>
 </div>
 <div class="company-logo">TD</div>
 </article>
@@ -3231,10 +3426,10 @@
 <div class="container">
 <div class="projects-header">
 <div>
-<div class="section-kicker">Selected Works</div>
-<h2 class="section-title" id="projects-title">Những dự án được tạo ra để <span class="gradient-text">gây ấn tượng.</span></h2>
+<div class="section-kicker" data-i18n="projects.kicker">Selected Works</div>
+<h2 class="section-title" data-i18n-html="projects.title" id="projects-title">Những dự án được tạo ra để <span class="gradient-text">gây ấn tượng.</span></h2>
 </div>
-<div class="projects-count"><strong>04</strong> / Featured Projects</div>
+<div class="projects-count" data-i18n-html="projects.count"><strong>04</strong> / Featured Projects</div>
 </div>
 <div class="projects-grid">
 <article aria-label="Dự án SpotOn Merchant Platform" class="project-card project-one glass tilt-card" id="spoton-merchant-experience">
@@ -3251,7 +3446,7 @@
 <div class="project-content">
 <span class="project-number">PROJECT / 01</span>
 <h3 class="project-title">SpotOn Merchant Platform</h3>
-<p class="project-description">Nền tảng giới thiệu giải pháp POS và merchant services, kết hợp giao diện chuyển đổi cao, biểu mẫu dữ liệu, tích hợp API, motion storytelling và trải nghiệm 3D.</p>
+<p class="project-description" data-i18n="projects.p1">Nền tảng giới thiệu giải pháp POS và merchant services, kết hợp giao diện chuyển đổi cao, biểu mẫu dữ liệu, tích hợp API, motion storytelling và trải nghiệm 3D.</p>
 <div class="project-tags"><span>Full-stack</span><span>REST API</span><span>Three.js</span><span>GSAP</span></div>
 </div>
 </article>
@@ -3272,7 +3467,7 @@
 <div class="project-content">
 <span class="project-number">PROJECT / 02</span>
 <h3 class="project-title">Luxury Salon Web System</h3>
-<p class="project-description">Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.</p>
+<p class="project-description" data-i18n="projects.p2">Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.</p>
 <div class="project-tags"><span>CMS</span><span>Booking Flow</span><span>Local SEO</span><span>Responsive</span></div>
 </div>
 </article>
@@ -3297,7 +3492,7 @@
 <div class="project-content">
 <span class="project-number">PROJECT / 03</span>
 <h3 class="project-title">Merchant Growth Platform</h3>
-<p class="project-description">Ứng dụng dashboard full-stack để tổ chức dữ liệu marketing và vận hành, với authentication, API, database, phân quyền và giao diện trực quan dễ mở rộng.</p>
+<p class="project-description" data-i18n="projects.p3">Ứng dụng dashboard full-stack để tổ chức dữ liệu marketing và vận hành, với authentication, API, database, phân quyền và giao diện trực quan dễ mở rộng.</p>
 <div class="project-tags"><span>Dashboard</span><span>Authentication</span><span>Database</span><span>Data API</span></div>
 </div>
 </article>
@@ -3318,7 +3513,7 @@
 <div class="project-content">
 <span class="project-number">PROJECT / 04</span>
 <h3 class="project-title">Experimental Motion Lab</h3>
-<p class="project-description">Phòng thử nghiệm Three.js, WebGL, particle, shader, scroll choreography và micro-interaction để tạo ngôn ngữ chuyển động riêng cho sản phẩm số.</p>
+<p class="project-description" data-i18n="projects.p4">Phòng thử nghiệm Three.js, WebGL, particle, shader, scroll choreography và micro-interaction để tạo ngôn ngữ chuyển động riêng cho sản phẩm số.</p>
 <div class="project-tags"><span>WebGL</span><span>Creative Coding</span><span>Interaction</span><span>R&amp;D</span></div>
 </div>
 </article>
@@ -3328,73 +3523,73 @@
 <section aria-labelledby="skills-title" class="section" id="skills">
 <div class="container expertise-wrap">
 <div class="expertise-intro">
-<div class="section-kicker">Core Expertise</div>
-<h2 class="section-title" id="skills-title">Kỹ năng kỹ thuật đi cùng <span class="gradient-text">tư duy thẩm mỹ.</span></h2>
-<p class="section-copy">Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.</p>
+<div class="section-kicker" data-i18n="skills.kicker">Core Expertise</div>
+<h2 class="section-title" data-i18n-html="skills.title" id="skills-title">Kỹ năng kỹ thuật đi cùng <span class="gradient-text">tư duy thẩm mỹ.</span></h2>
+<p class="section-copy" data-i18n="skills.copy">Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.</p>
 </div>
-<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail">Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail">Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail">Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">React, Next.js, Node.js &amp; Firebase</h3><span class="expertise-level">Modern Stack</span><p class="expertise-detail">Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">07</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article></div>
+<div class="expertise-list"><article class="expertise-item"><span class="expertise-index">01</span><h3 class="expertise-name">Front-end Engineering</h3><span class="expertise-level">Advanced</span><p class="expertise-detail" data-i18n="skills.d1">Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.</p></article><article class="expertise-item"><span class="expertise-index">02</span><h3 class="expertise-name">Back-end &amp; API Development</h3><span class="expertise-level">Full-stack</span><p class="expertise-detail" data-i18n="skills.d2">Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.</p></article><article class="expertise-item"><span class="expertise-index">03</span><h3 class="expertise-name">Database &amp; Data Modeling</h3><span class="expertise-level">System</span><p class="expertise-detail" data-i18n="skills.d3">Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.</p></article><article class="expertise-item"><span class="expertise-index">04</span><h3 class="expertise-name">React, Next.js, Node.js &amp; Firebase</h3><span class="expertise-level">Modern Stack</span><p class="expertise-detail" data-i18n="skills.d4">Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.</p></article><article class="expertise-item"><span class="expertise-index">05</span><h3 class="expertise-name">Motion, Three.js &amp; WebGL</h3><span class="expertise-level">Creative</span><p class="expertise-detail" data-i18n="skills.d5">GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.</p></article><article class="expertise-item"><span class="expertise-index">06</span><h3 class="expertise-name">UI/UX &amp; Product Architecture</h3><span class="expertise-level">Strategic</span><p class="expertise-detail" data-i18n="skills.d6">Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.</p></article><article class="expertise-item"><span class="expertise-index">07</span><h3 class="expertise-name">Performance, SEO &amp; Deployment</h3><span class="expertise-level">Production</span><p class="expertise-detail" data-i18n="skills.d7">Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.</p></article></div>
 </div>
 </section>
 <section aria-labelledby="process-title" class="section" id="process">
 <div class="container">
-<div class="section-kicker">Working Process</div>
-<h2 class="section-title" id="process-title">Quy trình rõ ràng. Kết quả <span class="gradient-text">khác biệt.</span></h2>
+<div class="section-kicker" data-i18n="process.kicker">Working Process</div>
+<h2 class="section-title" data-i18n-html="process.title" id="process-title">Quy trình rõ ràng. Kết quả <span class="gradient-text">khác biệt.</span></h2>
 <div class="process-grid">
 <article class="process-card glass reveal-card">
 <div class="process-step"><span>Step 01</span><span>Discover</span></div>
 <div class="process-icon"><i class="fa-solid fa-compass"></i></div>
-<h3>Khám phá bài toán</h3>
-<p>Làm rõ mục tiêu kinh doanh, người dùng, dữ liệu, chức năng, nội dung và các chỉ số thành công.</p>
+<h3 data-i18n="process.t1">Khám phá bài toán</h3>
+<p data-i18n="process.d1">Làm rõ mục tiêu kinh doanh, người dùng, dữ liệu, chức năng, nội dung và các chỉ số thành công.</p>
 </article>
 <article class="process-card glass reveal-card">
 <div class="process-step"><span>Step 02</span><span>Structure</span></div>
 <div class="process-icon"><i class="fa-solid fa-layer-group"></i></div>
-<h3>Thiết kế kiến trúc</h3>
-<p>Xây dựng sitemap, user flow, data model, API contract, component system và chiến lược triển khai.</p>
+<h3 data-i18n="process.t2">Thiết kế kiến trúc</h3>
+<p data-i18n="process.d2">Xây dựng sitemap, user flow, data model, API contract, component system và chiến lược triển khai.</p>
 </article>
 <article class="process-card glass reveal-card">
 <div class="process-step"><span>Step 03</span><span>Create</span></div>
 <div class="process-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-<h3>Phát triển full-stack</h3>
-<p>Kết nối giao diện, logic server, database, authentication, motion và các tích hợp cần thiết thành một hệ thống hoàn chỉnh.</p>
+<h3 data-i18n="process.t3">Phát triển full-stack</h3>
+<p data-i18n="process.d3">Kết nối giao diện, logic server, database, authentication, motion và các tích hợp cần thiết thành một hệ thống hoàn chỉnh.</p>
 </article>
 <article class="process-card glass reveal-card">
 <div class="process-step"><span>Step 04</span><span>Ship</span></div>
 <div class="process-icon"><i class="fa-solid fa-rocket"></i></div>
-<h3>Kiểm thử &amp; triển khai</h3>
-<p>Kiểm tra bảo mật cơ bản, responsive, hiệu suất, SEO, lỗi dữ liệu và độ ổn định trước khi đưa sản phẩm lên môi trường thật.</p>
+<h3 data-i18n="process.t4">Kiểm thử &amp; triển khai</h3>
+<p data-i18n="process.d4">Kiểm tra bảo mật cơ bản, responsive, hiệu suất, SEO, lỗi dữ liệu và độ ổn định trước khi đưa sản phẩm lên môi trường thật.</p>
 </article>
 </div>
 </div>
 </section>
 <section aria-labelledby="experience-title" class="section" id="experience">
 <div class="container experience-shell">
-<h2 class="sr-only" id="experience-title">Kinh nghiệm làm việc của Phương Hiển IT</h2>
+<h2 class="sr-only" data-i18n="experience.heading" id="experience-title">Kinh nghiệm làm việc của Phương Hiển IT</h2>
 <div class="experience-years glass">
 <div class="experience-big">5<sup>+</sup></div>
-<p>
+<p data-i18n="experience.summary">
             Năm liên tục học hỏi, thử nghiệm và phát triển những sản phẩm số có tính thẩm mỹ,
             hiệu suất và giá trị kinh doanh.
           </p>
 </div>
 <div class="timeline">
 <article class="timeline-item">
-<time class="timeline-date" datetime="2026">Hiện tại</time>
+<time class="timeline-date" data-i18n="experience.now" datetime="2026">Hiện tại</time>
 <h3>Creative Full-stack Developer</h3>
 <div class="timeline-company">TD TRANSACTION LLC · SpotOn Agent</div>
-<p>Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; đồng thời xây dựng motion experience cho merchant trong lĩnh vực thanh toán và marketing.</p>
+<p data-i18n="experience.d1">Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; đồng thời xây dựng motion experience cho merchant trong lĩnh vực thanh toán và marketing.</p>
 </article>
 <article class="timeline-item">
-<time class="timeline-date">Giai đoạn phát triển</time>
+<time class="timeline-date" data-i18n="experience.growth">Giai đoạn phát triển</time>
 <h3>Full-stack &amp; WordPress Developer</h3>
 <div class="timeline-company">Business Websites &amp; Local Brands</div>
-<p>Xây dựng website doanh nghiệp, CMS, tính năng quản trị, luồng đặt lịch, tích hợp dữ liệu và cấu trúc local SEO với trọng tâm mobile-first và khả năng vận hành thực tế.</p>
+<p data-i18n="experience.d2">Xây dựng website doanh nghiệp, CMS, tính năng quản trị, luồng đặt lịch, tích hợp dữ liệu và cấu trúc local SEO với trọng tâm mobile-first và khả năng vận hành thực tế.</p>
 </article>
 <article class="timeline-item">
-<time class="timeline-date">Nền tảng</time>
+<time class="timeline-date" data-i18n="experience.foundation">Nền tảng</time>
 <h3>Web Developer &amp; Motion Explorer</h3>
 <div class="timeline-company">Independent Practice</div>
-<p>Đào sâu JavaScript, kiến trúc web, API, database, CSS animation, GSAP, Three.js và creative coding để kết hợp kỹ thuật full-stack với trải nghiệm hình ảnh khác biệt.</p>
+<p data-i18n="experience.d3">Đào sâu JavaScript, kiến trúc web, API, database, CSS animation, GSAP, Three.js và creative coding để kết hợp kỹ thuật full-stack với trải nghiệm hình ảnh khác biệt.</p>
 </article>
 </div>
 </div>
@@ -3403,10 +3598,10 @@
 <div class="container">
 <div class="cta-panel glass">
 <div class="cta-content">
-<div class="section-kicker" style="justify-content:center;">Start A Project</div>
-<h2 class="cta-title" id="contact-title">Có một ý tưởng đủ lớn? Hãy biến nó thành <span class="gradient-text">trải nghiệm thật.</span></h2>
-<p class="cta-copy">Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.</p>
-<div class="cta-actions"><a class="btn btn-primary magnetic" href="mailto:hienlp17032001@gmail.com"><span>Gửi email hợp tác</span><i class="fa-solid fa-envelope"></i></a><a aria-label="Gọi cho Phương Hiển IT" class="btn btn-secondary magnetic" href="tel:+84364003638"><span>0364 003 638</span><i class="fa-solid fa-phone"></i></a><a aria-label="Xem GitHub của Phương Hiển IT" class="btn btn-secondary magnetic" href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank"><span>Xem GitHub</span><i class="fa-brands fa-github"></i></a><a aria-label="Facebook Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Facebook</span><i class="fa-brands fa-facebook-f"></i></a><a aria-label="Instagram Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span>Instagram</span><i class="fa-brands fa-instagram"></i></a></div>
+<div class="section-kicker" data-i18n="contact.kicker" style="justify-content:center;">Start A Project</div>
+<h2 class="cta-title" data-i18n-html="contact.title" id="contact-title">Có một ý tưởng đủ lớn? Hãy biến nó thành <span class="gradient-text">trải nghiệm thật.</span></h2>
+<p class="cta-copy" data-i18n="contact.copy">Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.</p>
+<div class="cta-actions"><a class="btn btn-primary magnetic" href="mailto:hienlp17032001@gmail.com"><span data-i18n="contact.email">Gửi email hợp tác</span><i class="fa-solid fa-envelope"></i></a><a aria-label="Gọi cho Phương Hiển IT" class="btn btn-secondary magnetic" href="tel:+84364003638"><span data-i18n="contact.phone">0364 003 638</span><i class="fa-solid fa-phone"></i></a><a aria-label="Xem GitHub của Phương Hiển IT" class="btn btn-secondary magnetic" href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.github">Xem GitHub</span><i class="fa-brands fa-github"></i></a><a aria-label="Facebook Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.facebook">Facebook</span><i class="fa-brands fa-facebook-f"></i></a><a aria-label="Instagram Phương Hiển IT" class="btn btn-secondary magnetic" href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank"><span data-i18n="contact.instagram">Instagram</span><i class="fa-brands fa-instagram"></i></a></div>
 </div>
 </div>
 </div>
@@ -3418,7 +3613,7 @@
 <div class="footer-brand">
 <img alt="Logo Phương Hiển IT" class="footer-logo" decoding="async" height="76" loading="lazy" src="https://phuonghienit.netlify.app/image/logo.png" width="76"/>
 <h2>PHƯƠNG HIỂN<span class="gradient-text">.IT</span></h2>
-<p>Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, Three.js, GSAP, UI/UX, technical SEO và triển khai thực tế.</p>
+<p data-i18n="footer.copy">Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, Three.js, GSAP, UI/UX, technical SEO và triển khai thực tế.</p>
 <address>
 <a aria-label="Gửi email cho Phương Hiển IT" href="mailto:hienlp17032001@gmail.com">
               hienlp17032001@gmail.com
@@ -3430,23 +3625,23 @@
 </div>
 <div class="footer-links">
 <div class="footer-column">
-<h3>Điều hướng</h3>
+<h3 data-i18n="footer.navigation">Điều hướng</h3>
 <ul>
-<li><a href="#about">Giới thiệu</a></li>
-<li><a href="#projects">Dự án</a></li>
-<li><a href="#skills">Kỹ năng</a></li>
-<li><a href="#experience">Kinh nghiệm</a></li>
+<li><a data-i18n="nav.about" href="#about">Giới thiệu</a></li>
+<li><a data-i18n="nav.projects" href="#projects">Dự án</a></li>
+<li><a data-i18n="nav.skills" href="#skills">Kỹ năng</a></li>
+<li><a data-i18n="nav.experience" href="#experience">Kinh nghiệm</a></li>
 </ul>
 </div>
 <div class="footer-column">
-<h3>Kết nối</h3>
-<ul><li><a href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="mailto:hienlp17032001@gmail.com">Email</a></li><li><a href="tel:+84364003638">Phone</a></li></ul>
+<h3 data-i18n="footer.connect">Kết nối</h3>
+<ul><li><a href="https://github.com/Hieng55" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a href="https://www.facebook.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/phuonghienitdev/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a data-i18n="footer.email" href="mailto:hienlp17032001@gmail.com">Email</a></li><li><a data-i18n="footer.phone" href="tel:+84364003638">Phone</a></li></ul>
 </div>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© <span id="year"></span> Phương Hiển IT. Crafted with code, motion &amp; curiosity.</span>
-<a class="back-top magnetic" href="#home">Về đầu trang <i class="fa-solid fa-arrow-up"></i></a>
+<span>© <span id="year"></span> <span data-i18n="footer.copyright">Phương Hiển IT. Được xây dựng bằng code, motion và sự tò mò.</span></span>
+<a class="back-top magnetic" href="#home"><span data-i18n="footer.backTop">Về đầu trang</span><i class="fa-solid fa-arrow-up"></i></a>
 </div>
 </div>
 </footer>
@@ -3454,6 +3649,117 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>(() => {
+  "use strict";
+
+  const translations = {"vi": {"preloader.role": "Creative Full-stack Developer", "preloader.loading": "Đang tải trải nghiệm", "brand.role": "Creative Full-stack Developer", "nav.about": "Giới thiệu", "nav.projects": "Dự án", "nav.skills": "Kỹ năng", "nav.experience": "Kinh nghiệm", "nav.start": "Bắt đầu dự án", "hero.availability": "<span class=\"availability-dot\"></span>Sẵn sàng cho những dự án khác biệt", "hero.description": "Creative Full-stack Developer với <strong>5 năm kinh nghiệm</strong>, chuyên xây dựng sản phẩm web từ giao diện, logic nghiệp vụ, API đến dữ liệu. Tôi kết hợp <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion và UI/UX</strong> để tạo trải nghiệm hiện đại, ổn định và có khả năng mở rộng. Hiện tôi đang làm việc cùng <strong>TD TRANSACTION LLC</strong> — SpotOn Agent trong lĩnh vực giải pháp thanh toán và marketing cho doanh nghiệp tại Hoa Kỳ.", "hero.projects": "Khám phá dự án", "hero.contact": "Liên hệ hợp tác", "hero.stack": "React, Next.js, Node.js & Firebase", "hero.motion": "3D Web & Motion Experience", "hero.scroll": "Scroll để khám phá", "about.kicker": "Hồ sơ lập trình viên", "about.title": "Không chỉ làm giao diện. Tôi xây dựng <span class=\"gradient-text\">toàn bộ hệ thống.</span>", "about.copy": "Tôi kết hợp tư duy sản phẩm, kiến trúc front-end, logic back-end, API, database, UI/UX và motion để tạo ra hệ thống web vừa đẹp, vừa vận hành hiệu quả và dễ mở rộng.", "about.mini": "Design × Code × Motion", "about.cardTitle": "Tạo dấu ấn riêng cho từng thương hiệu.", "about.systemTitle": "Tư duy hệ thống từ giao diện đến dữ liệu", "about.systemCopy": "Tôi không chỉ hoàn thành phần nhìn của website. Mỗi dự án được phân tích từ mục tiêu kinh doanh, luồng người dùng, kiến trúc dữ liệu, API, bảo mật, hiệu suất đến khả năng bảo trì. Chuyển động và 3D được sử dụng có chủ đích để nâng cao trải nghiệm thay vì chỉ để trang trí.", "about.stat1": "Năm kinh nghiệm phát triển website và trải nghiệm tương tác.", "about.stat2": "Giao diện, landing page và hệ thống digital đã triển khai.", "about.stat3": "Nhóm kỹ năng từ UI/UX, animation đến tối ưu hiệu suất.", "about.stat4": "Tập trung vào chi tiết, tính ổn định và trải nghiệm thực tế.", "about.company": "Tham gia phát triển website, landing page, hệ thống quản trị, luồng dữ liệu và trải nghiệm digital phục vụ merchant trong hệ sinh thái giải pháp thanh toán và marketing của SpotOn Agent.", "projects.kicker": "Dự án nổi bật", "projects.title": "Những dự án được tạo ra để <span class=\"gradient-text\">gây ấn tượng.</span>", "projects.count": "<strong>04</strong> / Dự án tiêu biểu", "projects.p1": "Nền tảng giới thiệu giải pháp POS và merchant services, kết hợp giao diện chuyển đổi cao, biểu mẫu dữ liệu, tích hợp API, motion storytelling và trải nghiệm 3D.", "projects.p2": "Hệ thống website cho nail salon với CMS quản lý nội dung, danh mục dịch vụ, luồng đặt lịch, tối ưu local SEO và trải nghiệm responsive trên mọi thiết bị.", "projects.p3": "Ứng dụng dashboard full-stack để tổ chức dữ liệu marketing và vận hành, với authentication, API, database, phân quyền và giao diện trực quan dễ mở rộng.", "projects.p4": "Phòng thử nghiệm Three.js, WebGL, particle, shader, scroll choreography và micro-interaction để tạo ngôn ngữ chuyển động riêng cho sản phẩm số.", "skills.kicker": "Năng lực chuyên môn", "skills.title": "Kỹ năng kỹ thuật đi cùng <span class=\"gradient-text\">tư duy thẩm mỹ.</span>", "skills.copy": "Năng lực của tôi trải dài từ giao diện, server, API và database đến motion, 3D, SEO, hiệu suất và triển khai sản phẩm trong môi trường thực tế.", "skills.d1": "Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility và browser compatibility.", "skills.d2": "Xây dựng logic phía server bằng Node.js, REST API, validation, authentication, authorization và tích hợp Firebase cùng các dịch vụ bên ngoài.", "skills.d3": "Thiết kế dữ liệu với Firebase Firestore và database truyền thống, tổ chức collection, truy vấn, tính toàn vẹn dữ liệu và đồng bộ client–server.", "skills.d4": "Phát triển ứng dụng với React.js, routing và rendering bằng Next.js, API và business logic bằng Node.js, kết hợp Firebase Authentication, Firestore, Storage và Hosting.", "skills.d5": "GSAP, ScrollTrigger, 3D scene, particle system, camera interaction, shader concept và tối ưu hiệu ứng trên nhiều thiết bị.", "skills.d6": "Information architecture, layout hierarchy, design system, user flow, conversion journey và cấu trúc sản phẩm có khả năng mở rộng.", "skills.d7": "Core Web Vitals, semantic SEO, caching, loading strategy, bảo mật cơ bản, kiểm thử responsive, version control và triển khai website.", "process.kicker": "Quy trình làm việc", "process.title": "Quy trình rõ ràng. Kết quả <span class=\"gradient-text\">khác biệt.</span>", "process.t1": "Khám phá bài toán", "process.t2": "Thiết kế kiến trúc", "process.t3": "Phát triển full-stack", "process.t4": "Kiểm thử & triển khai", "process.d1": "Làm rõ mục tiêu kinh doanh, người dùng, dữ liệu, chức năng, nội dung và các chỉ số thành công.", "process.d2": "Xây dựng sitemap, user flow, data model, API contract, component system và chiến lược triển khai.", "process.d3": "Kết nối giao diện, logic server, database, authentication, motion và các tích hợp cần thiết thành một hệ thống hoàn chỉnh.", "process.d4": "Kiểm tra bảo mật cơ bản, responsive, hiệu suất, SEO, lỗi dữ liệu và độ ổn định trước khi đưa sản phẩm lên môi trường thật.", "experience.heading": "Kinh nghiệm làm việc của Phương Hiển IT", "experience.summary": "Năm liên tục học hỏi, thử nghiệm và phát triển những sản phẩm số có tính thẩm mỹ, hiệu suất và giá trị kinh doanh.", "experience.now": "Hiện tại", "experience.growth": "Giai đoạn phát triển", "experience.foundation": "Nền tảng", "experience.d1": "Phát triển website, landing page và hệ thống digital từ giao diện đến server, API và dữ liệu; đồng thời xây dựng motion experience cho merchant trong lĩnh vực thanh toán và marketing.", "experience.d2": "Xây dựng website doanh nghiệp, CMS, tính năng quản trị, luồng đặt lịch, tích hợp dữ liệu và cấu trúc local SEO với trọng tâm mobile-first và khả năng vận hành thực tế.", "experience.d3": "Đào sâu JavaScript, kiến trúc web, API, database, CSS animation, GSAP, Three.js và creative coding để kết hợp kỹ thuật full-stack với trải nghiệm hình ảnh khác biệt.", "contact.kicker": "Bắt đầu dự án", "contact.title": "Có một ý tưởng đủ lớn? Hãy biến nó thành <span class=\"gradient-text\">trải nghiệm thật.</span>", "contact.copy": "Sẵn sàng đồng hành cùng các dự án cần một giải pháp hoàn chỉnh: giao diện mạnh, logic back-end rõ ràng, dữ liệu có cấu trúc, motion tinh tế và chất lượng triển khai chuyên nghiệp.", "contact.email": "Gửi email hợp tác", "contact.phone": "0364 003 638", "contact.github": "Xem GitHub", "contact.facebook": "Facebook", "contact.instagram": "Instagram", "footer.copy": "Creative Full-stack Developer xây dựng sản phẩm web từ giao diện, API và database đến motion, Three.js, GSAP, UI/UX, technical SEO và triển khai thực tế.", "footer.navigation": "Điều hướng", "footer.connect": "Kết nối", "footer.email": "Email", "footer.phone": "Điện thoại", "footer.copyright": "Phương Hiển IT. Được xây dựng bằng code, motion và sự tò mò.", "footer.backTop": "Về đầu trang"}, "en": {"preloader.role": "Creative Full-stack Developer", "preloader.loading": "Loading experience", "brand.role": "Creative Full-stack Developer", "nav.about": "About", "nav.projects": "Projects", "nav.skills": "Skills", "nav.experience": "Experience", "nav.start": "Start a project", "hero.availability": "<span class=\"availability-dot\"></span>Available for distinctive digital projects", "hero.description": "I am a Creative Full-stack Developer with <strong>5 years of experience</strong>, building web products from interfaces and business logic to APIs and data. I combine <strong>React.js, Next.js, Node.js, Firebase, Three.js, GSAP, motion, and UI/UX</strong> to create modern, reliable, and scalable experiences. I currently work with <strong>TD TRANSACTION LLC</strong> — a SpotOn Agent providing payment and marketing solutions for businesses in the United States.", "hero.projects": "Explore projects", "hero.contact": "Work with me", "hero.stack": "React, Next.js, Node.js & Firebase", "hero.motion": "3D Web & Motion Experience", "hero.scroll": "Scroll to explore", "about.kicker": "Developer Profile", "about.title": "I do more than interfaces. I build <span class=\"gradient-text\">complete systems.</span>", "about.copy": "I combine product thinking, front-end architecture, back-end logic, APIs, databases, UI/UX, and motion to build web systems that look distinctive, perform reliably, and scale efficiently.", "about.mini": "Design × Code × Motion", "about.cardTitle": "A distinct digital identity for every brand.", "about.systemTitle": "System thinking from interface to data", "about.systemCopy": "I do more than complete the visual layer. Every project is considered through business goals, user flows, data architecture, APIs, security, performance, and maintainability. Motion and 3D are used purposefully to improve the experience rather than simply decorate it.", "about.stat1": "Years of experience developing websites and interactive experiences.", "about.stat2": "Interfaces, landing pages, and digital systems delivered.", "about.stat3": "Skill areas spanning UI/UX, animation, systems, and performance.", "about.stat4": "Focused on detail, stability, and real-world user experience.", "about.company": "Contributing to websites, landing pages, management systems, data flows, and digital experiences for merchants within a SpotOn Agent payment and marketing ecosystem.", "projects.kicker": "Selected Works", "projects.title": "Projects designed to make a <span class=\"gradient-text\">lasting impression.</span>", "projects.count": "<strong>04</strong> / Featured projects", "projects.p1": "A platform for POS and merchant-service solutions combining conversion-focused interfaces, data forms, API integrations, motion storytelling, and 3D experiences.", "projects.p2": "A website system for nail salons featuring CMS content management, service categories, booking journeys, local SEO, and responsive experiences across devices.", "projects.p3": "A full-stack dashboard application for marketing and operational data, with authentication, APIs, databases, permissions, and an extensible visual interface.", "projects.p4": "An experimental lab for Three.js, WebGL, particles, shaders, scroll choreography, and micro-interactions that create a distinctive motion language.", "skills.kicker": "Core Expertise", "skills.title": "Technical depth paired with <span class=\"gradient-text\">visual thinking.</span>", "skills.copy": "My capabilities span interfaces, servers, APIs, and databases, as well as motion, 3D, SEO, performance, and production deployment.", "skills.d1": "Semantic HTML, CSS architecture, JavaScript, React.js, Next.js, responsive design, reusable components, accessibility, and browser compatibility.", "skills.d2": "Server-side logic with Node.js, REST APIs, validation, authentication, authorization, Firebase, and third-party service integrations.", "skills.d3": "Data modeling with Firebase Firestore and traditional databases, including collections, queries, data integrity, and client-server synchronization.", "skills.d4": "Applications built with React.js, Next.js routing and rendering, Node.js APIs and business logic, plus Firebase Authentication, Firestore, Storage, and Hosting.", "skills.d5": "GSAP, ScrollTrigger, 3D scenes, particle systems, camera interaction, shader concepts, and effect optimization across devices.", "skills.d6": "Information architecture, layout hierarchy, design systems, user flows, conversion journeys, and scalable product structures.", "skills.d7": "Core Web Vitals, semantic SEO, caching, loading strategies, foundational security, responsive testing, version control, and deployment.", "process.kicker": "Working Process", "process.title": "A clear process. A <span class=\"gradient-text\">distinct result.</span>", "process.t1": "Discover the problem", "process.t2": "Design the architecture", "process.t3": "Build the full stack", "process.t4": "Test and deploy", "process.d1": "Clarify business goals, users, data, features, content, and the metrics that define success.", "process.d2": "Create the sitemap, user flow, data model, API contract, component system, and deployment strategy.", "process.d3": "Connect the interface, server logic, database, authentication, motion, and required integrations into one complete system.", "process.d4": "Review foundational security, responsiveness, performance, SEO, data integrity, and production stability before launch.", "experience.heading": "Phuong Hien IT professional experience", "experience.summary": "Years of continuous learning, experimentation, and building digital products with visual quality, performance, and business value.", "experience.now": "Present", "experience.growth": "Growth stage", "experience.foundation": "Foundation", "experience.d1": "Developing websites, landing pages, and digital systems from interfaces to servers, APIs, and data, while creating motion experiences for merchants in payment and marketing.", "experience.d2": "Building business websites, CMS features, administration tools, booking flows, data integrations, and local SEO structures with a mobile-first, production-focused approach.", "experience.d3": "Deepening expertise in JavaScript, web architecture, APIs, databases, CSS animation, GSAP, Three.js, and creative coding to unite full-stack engineering with distinctive visual experiences.", "contact.kicker": "Start A Project", "contact.title": "Have an ambitious idea? Let’s turn it into a <span class=\"gradient-text\">real experience.</span>", "contact.copy": "Ready to support projects that need a complete solution: strong interfaces, clear back-end logic, structured data, refined motion, and professional production quality.", "contact.email": "Send an email", "contact.phone": "0364 003 638", "contact.github": "View GitHub", "contact.facebook": "Facebook", "contact.instagram": "Instagram", "footer.copy": "Creative Full-stack Developer building web products from interfaces, APIs, and databases to motion, Three.js, GSAP, UI/UX, technical SEO, and production deployment.", "footer.navigation": "Navigation", "footer.connect": "Connect", "footer.email": "Email", "footer.phone": "Phone", "footer.copyright": "Phuong Hien IT. Crafted with code, motion, and curiosity.", "footer.backTop": "Back to top"}};
+  const pageMeta = {
+    vi: {
+      title: "Phương Hiển IT | Creative Full-stack Developer",
+      description: "Portfolio Phương Hiển IT, Creative Full-stack Developer với 5 năm kinh nghiệm về React.js, Next.js, Node.js, Firebase, API, GSAP, Three.js và technical SEO."
+    },
+    en: {
+      title: "Phuong Hien IT | Creative Full-stack Developer",
+      description: "Portfolio of Phuong Hien IT, a Creative Full-stack Developer with 5 years of experience in React.js, Next.js, Node.js, Firebase, APIs, GSAP, Three.js, and technical SEO."
+    }
+  };
+
+  const root = document.documentElement;
+  const themeButton = document.getElementById("themeToggle");
+  const themeIcon = themeButton?.querySelector("i");
+  const themeText = document.getElementById("themeToggleText");
+  const languageButton = document.getElementById("languageToggle");
+  const languageCurrent = document.getElementById("languageCurrent");
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector(".nav");
+
+  const safeStorage = {
+    get(key, fallback) {
+      try { return localStorage.getItem(key) || fallback; } catch (error) { return fallback; }
+    },
+    set(key, value) {
+      try { localStorage.setItem(key, value); } catch (error) { /* Storage may be disabled. */ }
+    }
+  };
+
+  let currentTheme = safeStorage.get("ph-theme", root.dataset.theme || "dark");
+  let currentLanguage = safeStorage.get("ph-language", root.dataset.lang || "vi");
+
+  function updateControlLabels() {
+    const isVietnamese = currentLanguage === "vi";
+    const nextThemeLabel = currentTheme === "dark"
+      ? (isVietnamese ? "Chuyển sang chế độ sáng" : "Switch to light mode")
+      : (isVietnamese ? "Chuyển sang chế độ tối" : "Switch to dark mode");
+
+    if (themeButton) {
+      themeButton.setAttribute("aria-label", nextThemeLabel);
+      themeButton.setAttribute("title", nextThemeLabel);
+    }
+    if (themeText) themeText.textContent = nextThemeLabel;
+
+    const nextLanguageLabel = isVietnamese ? "Switch to English" : "Chuyển sang tiếng Việt";
+    if (languageButton) {
+      languageButton.setAttribute("aria-label", nextLanguageLabel);
+      languageButton.setAttribute("title", nextLanguageLabel);
+    }
+
+    const menuIsOpen = navigation?.classList.contains("open");
+    const menuLabel = isVietnamese
+      ? (menuIsOpen ? "Đóng menu" : "Mở menu")
+      : (menuIsOpen ? "Close menu" : "Open menu");
+    menuButton?.setAttribute("aria-label", menuLabel);
+    navigation?.setAttribute("aria-label", isVietnamese ? "Điều hướng chính" : "Primary navigation");
+  }
+
+  function applyTheme(theme, persist = true) {
+    currentTheme = theme === "light" ? "light" : "dark";
+    root.dataset.theme = currentTheme;
+    if (themeIcon) {
+      themeIcon.className = currentTheme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    }
+    if (themeColor) themeColor.setAttribute("content", currentTheme === "dark" ? "#07090d" : "#f3f6fb");
+    if (persist) safeStorage.set("ph-theme", currentTheme);
+    updateControlLabels();
+  }
+
+  function applyLanguage(language, persist = true) {
+    currentLanguage = language === "en" ? "en" : "vi";
+    const dictionary = translations[currentLanguage];
+    root.lang = currentLanguage;
+    root.dataset.lang = currentLanguage;
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.dataset.i18n;
+      if (dictionary[key] !== undefined) element.textContent = dictionary[key];
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+      const key = element.dataset.i18nHtml;
+      if (dictionary[key] !== undefined) element.innerHTML = dictionary[key];
+    });
+
+    if (languageCurrent) languageCurrent.textContent = currentLanguage.toUpperCase();
+    document.title = pageMeta[currentLanguage].title;
+    descriptionMeta?.setAttribute("content", pageMeta[currentLanguage].description);
+    if (persist) safeStorage.set("ph-language", currentLanguage);
+    updateControlLabels();
+  }
+
+  themeButton?.addEventListener("click", () => {
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+  });
+
+  languageButton?.addEventListener("click", () => {
+    applyLanguage(currentLanguage === "vi" ? "en" : "vi");
+  });
+
+  menuButton?.addEventListener("click", () => window.setTimeout(updateControlLabels, 0));
+
+  applyTheme(currentTheme, false);
+  applyLanguage(currentLanguage, false);
+})();</script>
 <script>
     (() => {
       "use strict";
