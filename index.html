@@ -883,17 +883,23 @@
     }
 
     .hero-title {
-      font-family: "Space Grotesk", sans-serif;
+      font-family: "Space Grotesk", "Jost", sans-serif;
       font-size: clamp(3.8rem, 8vw, 8.6rem);
       font-weight: 600;
-      line-height: 0.84;
-      letter-spacing: -0.085em;
+      line-height: 0.92;
+      letter-spacing: -0.075em;
     }
 
+    /*
+      Extra clipping space is required for Vietnamese accents such as Ể.
+      Negative margins preserve the original compact visual spacing while
+      keeping the GSAP line-reveal animation contained inside each row.
+    */
     .hero-title .line {
       display: block;
       overflow: hidden;
-      padding-bottom: 0.08em;
+      padding: 0.24em 0.06em 0.14em;
+      margin: -0.24em -0.06em -0.12em;
     }
 
     .hero-title .line-inner {
@@ -2460,9 +2466,14 @@
       }
 
       .hero-title {
-        font-size: clamp(3rem, 15.8vw, 4.7rem);
-        line-height: 0.9;
-        letter-spacing: -0.075em;
+        font-size: clamp(3rem, 15.2vw, 4.7rem);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-title .line {
+        padding-top: 0.28em;
+        margin-top: -0.28em;
       }
 
       .hero-description {
@@ -2987,7 +2998,8 @@
       }
 
       .hero-title {
-        font-size: 3rem;
+        font-size: clamp(2.72rem, 15vw, 3rem);
+        letter-spacing: -0.05em;
       }
 
       .project-card {
@@ -3876,5 +3888,6 @@
     })();
   </script>
 <noscript>
+
 </body>
 </html>
