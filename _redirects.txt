@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>404 - Không tìm thấy trang | Phương Hiển IT</title>
+  <meta name="robots" content="noindex,follow">
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<main class="hero">
+  <div class="container">
+    <div class="eyebrow">404</div>
+
+    <h1>
+      Không tìm thấy
+      <span class="gradient">trang bạn yêu cầu</span>
+    </h1>
+
+    <p class="lead">
+      URL có thể đã thay đổi hoặc không tồn tại.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">
+        Về trang chủ
+      </a>
+
+      <a href="/lien-he/" class="btn btn-secondary">
+        Liên hệ
+      </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
