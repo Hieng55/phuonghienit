@@ -660,6 +660,12 @@
       color: var(--accent-2);
     }
 
+    .hero-meta-icon img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
     .hero-visual {
       position: relative;
       min-height: 610px;
