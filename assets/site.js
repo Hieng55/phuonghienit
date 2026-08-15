@@ -32,6 +32,44 @@
   /* Year */
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
+  /* Resolve legacy project image URLs (source files are PNG, older markup uses WebP). */
+  const projectImageNames = new Set([
+    "canton-tic-tac-nails",
+    "fancy-nails",
+    "lumina-nails",
+    "m-sleek-nail",
+    "vip-nails"
+  ]);
+  document.querySelectorAll('img[src$=".webp"]').forEach(image => {
+    const filename = image.getAttribute("src")?.split("/").pop()?.replace(/\.webp$/i, "");
+    if (filename && projectImageNames.has(filename)) {
+      image.src = image.getAttribute("src").replace(/\.webp$/i, ".png");
+    }
+  });
+
+  /* Official social profiles */
+  const socialProfiles = [
+    { name: "GitHub", handle: "Hieng55", url: "https://github.com/Hieng55", icon: "/assets/icons/github.svg" },
+    { name: "Facebook", handle: "phuonghienitdev", url: "https://www.facebook.com/phuonghienitdev/", icon: "/assets/icons/facebook.svg" },
+    { name: "Instagram", handle: "phuonghienitdev", url: "https://www.instagram.com/phuonghienitdev/", icon: "/assets/icons/instagram.svg" }
+  ];
+  document.querySelectorAll(".footer-brand").forEach(footerBrand => {
+    if (footerBrand.querySelector(".social-links")) return;
+    const socialNav = document.createElement("nav");
+    socialNav.className = "social-links";
+    socialNav.setAttribute("aria-label", "Mạng xã hội của Phương Hiển IT");
+    socialProfiles.forEach(({ name, handle, url, icon }) => {
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "me noopener noreferrer";
+      link.setAttribute("aria-label", `${name} của Phương Hiển IT (mở trong tab mới)`);
+      link.innerHTML = `<span class="social-icon" aria-hidden="true"><img src="${icon}" alt="" width="22" height="22"></span><span class="social-label"><strong>${name}</strong><small>@${handle}</small></span><span class="social-arrow" aria-hidden="true">↗</span>`;
+      socialNav.append(link);
+    });
+    footerBrand.querySelector("address")?.after(socialNav);
+  });
+
   /* Preloader - preserves original visual but never waits for window.load */
   const preloader = document.querySelector(".preloader");
   let alreadySeen = false;
@@ -63,16 +101,42 @@
   /* Navigation */
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
+  const closeSubmenus = (except = null) => {
+    submenuToggles.forEach(toggle => {
+      if (toggle === except) return;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.closest(".nav-item--has-submenu")?.classList.remove("submenu-open");
+    });
+  };
   const closeMenu = () => {
     nav?.classList.remove("open");
     menuToggle?.setAttribute("aria-expanded", "false");
+    closeSubmenus();
   };
   menuToggle?.addEventListener("click", () => {
     const open = nav?.classList.toggle("open") || false;
     menuToggle.setAttribute("aria-expanded", String(open));
     menuToggle.textContent = open ? "×" : "☰";
   });
+  submenuToggles.forEach(toggle => toggle.addEventListener("click", event => {
+    event.stopPropagation();
+    const parent = toggle.closest(".nav-item--has-submenu");
+    const open = !parent?.classList.contains("submenu-open");
+    closeSubmenus(toggle);
+    parent?.classList.toggle("submenu-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  }));
   document.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", closeMenu));
+  document.addEventListener("click", event => {
+    if (!event.target.closest(".nav-item--has-submenu")) closeSubmenus();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeMenu();
+      menuToggle?.focus();
+    }
+  });
 
   const norm = p => {
     p = (p || "/").replace(/index\.html$/i, "");
@@ -100,6 +164,57 @@
   };
   addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(updateScroll); } }, { passive:true });
   updateScroll();
+
+  /* Keep the long-form article table of contents in sync with reading position. */
+  const tocLinks = [...document.querySelectorAll('.article-aside > a[href^="#"]')];
+  if (tocLinks.length) {
+    const tocItems = tocLinks.map(link => {
+      const id = decodeURIComponent(link.hash.slice(1));
+      return { link, target: document.getElementById(id) };
+    }).filter(item => item.target);
+
+    const setActiveToc = activeLink => {
+      tocItems.forEach(({ link }) => {
+        const active = link === activeLink;
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const updateActiveToc = () => {
+      const readingLine = scrollY + Math.min(innerHeight * .28, 220);
+      let currentItem = tocItems[0];
+      for (const item of tocItems) {
+        const targetTop = item.target.getBoundingClientRect().top + scrollY;
+        if (targetTop <= readingLine) currentItem = item;
+        else break;
+      }
+      if (currentItem) setActiveToc(currentItem.link);
+    };
+
+    tocItems.forEach(({ link }) => link.addEventListener("click", () => setActiveToc(link)));
+
+    if ("IntersectionObserver" in window) {
+      const tocObserver = new IntersectionObserver(updateActiveToc, {
+        rootMargin: "-20% 0px -68% 0px",
+        threshold: 0
+      });
+      tocItems.forEach(({ target }) => tocObserver.observe(target));
+    }
+
+    let tocTicking = false;
+    addEventListener("scroll", () => {
+      if (tocTicking) return;
+      tocTicking = true;
+      requestAnimationFrame(() => {
+        updateActiveToc();
+        tocTicking = false;
+      });
+    }, { passive:true });
+    addEventListener("resize", updateActiveToc, { passive:true });
+    updateActiveToc();
+  }
 
   /* Analytics hook - fill only after GA4 ID exists. */
   const GA4_ID = "";
