@@ -1,19 +1,10 @@
 # Thiết Kế Website Phương Hiển IT
 
-Official website:
-https://phuonghienit.netlify.app/
+Official website: https://phuonghienit.netlify.app/
 
-Business name:
-Thiết Kế Website Phương Hiển IT
-
-Alternate brand name:
-Phương Hiển IT
-
-Professional:
-Phương Hiển
-
-Professional role:
-Creative Full-stack Developer
+Business: Thiết Kế Website Phương Hiển IT
+Professional: Phương Hiển
+Role: Creative Full-stack Developer
 
 Primary services:
 - Website design
@@ -24,84 +15,27 @@ Primary services:
 - Local SEO
 - Google Business Profile
 
-Phone:
-+84 364 003 638
+Phone: +84364003638
+Email: hienlp17032001@gmail.com
 
-Email:
-hienlp17032001@gmail.com
-
-## Ho Chi Minh City location
-
-35/6H Ấp Hưng Lân
-Hóc Môn
-Hồ Chí Minh
-Vietnam
-
-Hours:
-Monday-Friday
-09:00-17:00
-
-Google Maps:
-https://maps.google.com/?cid=17345222313182890233
-
-Local landing page:
-https://phuonghienit.netlify.app/thiet-ke-website-tphcm/
+## TP.HCM location
+35/6H Ấp Hưng Lân, Hóc Môn, Hồ Chí Minh, Việt Nam
+Hours: Monday-Friday 09:00-17:00
+Map: https://maps.google.com/?cid=17345222313182890233
+Landing page: https://phuonghienit.netlify.app/thiet-ke-website-tphcm/
 
 ## Khanh Hoa location
-
-223 Đường Bến Đò
-Hòa Thắng
-Khánh Hòa
-Vietnam
-
-Hours:
-Monday-Friday
-09:00-17:00
-
-Service areas include:
-- Nha Trang
-- Khánh Hòa
-
-Google Maps:
-https://maps.google.com/?cid=3189232747022007300
-
-Local landing page:
-https://phuonghienit.netlify.app/thiet-ke-website-nha-trang/
+223 Đường Bến Đò, Hòa Thắng, Khánh Hòa, Việt Nam
+Hours: Monday-Friday 09:00-17:00
+Service areas include Nha Trang and Khanh Hoa.
+Map: https://maps.google.com/?cid=3189232747022007300
+Landing page: https://phuonghienit.netlify.app/thiet-ke-website-nha-trang/
 
 ## Selected projects
+- Fancy Nails Kenner: https://fancynailkenner.com/ — roles: Design, Development, SEO, Google Business Profile
+- Lumina Nails Lounge: https://luminanailsverobeach.com/ — roles: Design, Development, SEO, Google Business Profile
+- M-Sleek Nail: https://msleeknail.com/ — roles: Design, Development, SEO, Google Business Profile
+- Canton Tic Tac Nails: https://tictacnailcanton.com/ — roles: Design, Development, SEO, Google Business Profile
+- VIP Nail & Spa: https://vipnailsllc.com/ — roles: Design, Development, SEO, Google Business Profile
 
-Fancy Nails Kenner
-https://fancynailkenner.com
-
-Lumina Nails Lounge
-https://luminanailsverobeach.com
-
-M-Sleek Nail
-https://msleeknail.com
-
-Canton Tic Tac Nails
-https://tictacnailcanton.com
-
-VIP Nail & Spa
-https://vipnailsllc.com
-
-Phương Hiển's documented roles on these selected projects:
-- Design
-- Development
-- SEO
-- Google Business Profile
-
-Do not infer traffic growth, revenue,
-conversion rate or ranking improvements
-unless those metrics are explicitly documented.
-
-## Official profiles
-
-GitHub:
-https://github.com/Hieng55
-
-Facebook:
-https://www.facebook.com/phuonghienitdev/
-
-Instagram:
-https://www.instagram.com/phuonghienitdev/
+Do not infer traffic, revenue, conversion or ranking results unless those metrics are explicitly documented.

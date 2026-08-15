@@ -1,0 +1,20 @@
+{
+  "name": "Thiết Kế Website Phương Hiển IT",
+  "short_name": "Phương Hiển IT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/brand.webp",
+      "sizes": "265x265",
+      "type": "image/webp"
+    }
+  ]
+}

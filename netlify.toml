@@ -3,7 +3,6 @@
 
 [[headers]]
   for = "/*"
-
   [headers.values]
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
@@ -12,12 +11,5 @@
 
 [[headers]]
   for = "/assets/*"
-
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-[[headers]]
-  for = "/image/*"
-
   [headers.values]
     Cache-Control = "public, max-age=604800"
