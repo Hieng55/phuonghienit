@@ -63,7 +63,7 @@
       link.href = url;
       link.target = "_blank";
       link.rel = "me noopener noreferrer";
-      link.setAttribute("aria-label", `${name} của Phương Hiển IT (mở trong tab mới)`);
+      link.title = `${name} của Phương Hiển IT — mở trong tab mới`;
       link.innerHTML = `<span class="social-icon" aria-hidden="true"><img src="${icon}" alt="" width="22" height="22"></span><span class="social-label"><strong>${name}</strong><small>@${handle}</small></span><span class="social-arrow" aria-hidden="true">↗</span>`;
       socialNav.append(link);
     });

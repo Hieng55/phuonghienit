@@ -1,0 +1,8 @@
+.env
+.env.*
+.netlify/
+.audit-mobile/
+test-results/
+playwright-report/
+node_modules/
+*.log

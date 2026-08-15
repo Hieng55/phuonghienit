@@ -777,7 +777,8 @@
       object-position: 50% 32%;
     }
 
-    .developer-card h3 {
+    .developer-card-name {
+      display: block;
       font-family: "Space Grotesk", sans-serif;
       font-size: 0.93rem;
     }
@@ -2234,7 +2235,7 @@
         font-size: 0.9rem;
       }
 
-      .developer-card h3 {
+      .developer-card-name {
         font-size: 0.84rem;
       }
 
@@ -2825,7 +2826,7 @@
         rgba(8, 12, 20, .82);
     }
 
-    html[data-theme="light"] .code-panel .developer-card h3 {
+    html[data-theme="light"] .code-panel .developer-card-name {
       color: #fff;
     }
 
@@ -3152,7 +3153,7 @@
         #0b1019;
     }
 
-    html[data-theme="light"] .code-panel .developer-card h3 {
+    html[data-theme="light"] .code-panel .developer-card-name {
       color: #ffffff;
     }
 
