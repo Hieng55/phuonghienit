@@ -22,7 +22,7 @@ Upload **toàn bộ nội dung của thư mục này** lên Netlify. `index.html
 `assets/site.js` đang để `GA4_ID = ""`. Khi có Measurement ID dạng `G-...`, thay giá trị này hoặc gửi ID để cập nhật.
 
 ## Cache và cập nhật
-Website không cần trang quản trị cache hoặc biến môi trường bảo mật. `netlify.toml` buộc trình duyệt và Netlify CDN kiểm tra lại HTML, CSS, JavaScript và hình ảnh ở mỗi lượt truy cập, nên bản deploy mới được nhận tự động mà không cần thao tác xóa cache thủ công.
+Website không cần trang quản trị cache hoặc biến môi trường bảo mật. `netlify.toml` đặt `no-store` cho toàn bộ HTML, CSS, JavaScript và hình ảnh để trình duyệt và Netlify CDN không lưu lại phản hồi.
 
 ## Local SEO
 - TP.HCM: 35/6H Ấp Hưng Lân, Hóc Môn, Hồ Chí Minh.
