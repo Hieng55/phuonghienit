@@ -21,13 +21,8 @@ Upload **toàn bộ nội dung của thư mục này** lên Netlify. `index.html
 ## GA4
 `assets/site.js` đang để `GA4_ID = ""`. Khi có Measurement ID dạng `G-...`, thay giá trị này hoặc gửi ID để cập nhật.
 
-## Admin cache
-Trang quản trị nằm tại `/admin/`. Không lưu mật khẩu hoặc Netlify token trong source code. Trước khi dùng, tạo các biến môi trường bảo mật trong Netlify:
-
-- `ADMIN_CACHE_PASSWORD`: mật khẩu riêng dài tối thiểu 12 ký tự, không trùng username hoặc ngày sinh.
-- `ADMIN_SESSION_SECRET`: chuỗi ngẫu nhiên dài tối thiểu 32 ký tự để ký session.
-
-Không cần đưa personal access token hoặc Site ID vào website. Function sử dụng `purgeCache` chính thức và purge token do Netlify tự cấp trong runtime. Sau khi khai báo hai biến trên, trigger một deploy mới. Session admin dùng cookie `HttpOnly`, `Secure`, `SameSite=Strict` và tự hết hạn sau 30 phút.
+## Cache và cập nhật
+Website không cần trang quản trị cache hoặc biến môi trường bảo mật. `netlify.toml` buộc trình duyệt và Netlify CDN kiểm tra lại HTML, CSS, JavaScript và hình ảnh ở mỗi lượt truy cập, nên bản deploy mới được nhận tự động mà không cần thao tác xóa cache thủ công.
 
 ## Local SEO
 - TP.HCM: 35/6H Ấp Hưng Lân, Hóc Môn, Hồ Chí Minh.

@@ -1,9 +1,0 @@
-{
-  "name": "phuonghienit-website",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Website Phương Hiển IT và Netlify cache admin function.",
-  "dependencies": {
-    "@netlify/functions": "5.3.0"
-  }
-}
