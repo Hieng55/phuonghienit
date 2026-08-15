@@ -4073,7 +4073,7 @@ html[data-theme="dark"] .contact-social-icon img[src$="github.svg"] { filter:bri
 }
 
 @media (max-width: 900px) {
-  .nav-cta { margin-left:0; }
+  .nav-cta { display:none; }
 }
 
 /* ====================================================================
