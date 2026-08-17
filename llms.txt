@@ -39,3 +39,8 @@ Landing page: https://phuonghienit.netlify.app/thiet-ke-website-nha-trang/
 - VIP Nail & Spa: https://vipnailsllc.com/ — roles: Design, Development, SEO, Google Business Profile
 
 Do not infer traffic, revenue, conversion or ranking results unless those metrics are explicitly documented.
+
+## Local website design guides
+- Ninh Hoa website design and acceptance checklist: https://phuonghienit.netlify.app/kien-thuc/thiet-ke-website-ninh-hoa-checklist/
+- Ninh Hoa website and Local SEO architecture: https://phuonghienit.netlify.app/kien-thuc/website-local-seo-ninh-hoa/
+- Nha Trang tourism website UX, SEO and conversion guide: https://phuonghienit.netlify.app/kien-thuc/thiet-ke-website-du-lich-nha-trang/

@@ -216,6 +216,95 @@
     updateActiveToc();
   }
 
+  /* Blog filtering and pagination. All cards remain visible without JavaScript. */
+  const blogList = document.querySelector("[data-blog-list]");
+  if (blogList) {
+    const cards = Array.from(blogList.querySelectorAll("[data-blog-card]"));
+    const filters = Array.from(document.querySelectorAll("[data-blog-filter]"));
+    const pagination = document.querySelector("[data-blog-pagination]");
+    const pageNumbers = pagination?.querySelector("[data-page-numbers]");
+    const previous = pagination?.querySelector("[data-page-prev]");
+    const next = pagination?.querySelector("[data-page-next]");
+    const status = document.querySelector("[data-blog-status]");
+    const pageSize = 6;
+    const allowedCategories = new Set(["all", ...filters.map(button => button.dataset.blogFilter)]);
+    const readState = () => {
+      const params = new URLSearchParams(location.search);
+      const requestedCategory = params.get("category") || "all";
+      return {
+        category: allowedCategories.has(requestedCategory) ? requestedCategory : "all",
+        page: Math.max(1, Number.parseInt(params.get("page") || "1", 10) || 1)
+      };
+    };
+    let state = readState();
+
+    const writeUrl = () => {
+      const params = new URLSearchParams(location.search);
+      state.category === "all" ? params.delete("category") : params.set("category", state.category);
+      state.page === 1 ? params.delete("page") : params.set("page", String(state.page));
+      const query = params.toString();
+      history.pushState({ blog: true }, "", `${location.pathname}${query ? `?${query}` : ""}${location.hash}`);
+    };
+
+    const renderBlog = (updateUrl = false, moveToList = false) => {
+      const matching = cards.filter(card => state.category === "all" || card.dataset.category.split(" ").includes(state.category));
+      const pageCount = Math.max(1, Math.ceil(matching.length / pageSize));
+      state.page = Math.min(state.page, pageCount);
+      const first = (state.page - 1) * pageSize;
+      const visible = new Set(matching.slice(first, first + pageSize));
+      cards.forEach(card => { card.hidden = !visible.has(card); });
+
+      filters.forEach(button => {
+        const active = button.dataset.blogFilter === state.category;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+
+      if (status) {
+        const start = matching.length ? first + 1 : 0;
+        const end = Math.min(first + pageSize, matching.length);
+        status.textContent = `Hiển thị ${start}–${end} trong ${matching.length} bài viết`;
+      }
+
+      if (pagination && pageNumbers && previous && next) {
+        pagination.hidden = pageCount <= 1;
+        previous.disabled = state.page === 1;
+        next.disabled = state.page === pageCount;
+        pageNumbers.replaceChildren();
+        for (let page = 1; page <= pageCount; page += 1) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = String(page);
+          button.dataset.page = String(page);
+          button.setAttribute("aria-label", `Trang ${page}`);
+          if (page === state.page) {
+            button.classList.add("is-active");
+            button.setAttribute("aria-current", "page");
+          }
+          pageNumbers.appendChild(button);
+        }
+      }
+      if (updateUrl) writeUrl();
+      if (moveToList) document.querySelector("#thu-vien-bai-viet")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    };
+
+    filters.forEach(button => button.addEventListener("click", () => {
+      state.category = button.dataset.blogFilter;
+      state.page = 1;
+      renderBlog(true, false);
+    }));
+    pageNumbers?.addEventListener("click", event => {
+      const button = event.target.closest("[data-page]");
+      if (!button) return;
+      state.page = Number(button.dataset.page);
+      renderBlog(true, true);
+    });
+    previous?.addEventListener("click", () => { if (state.page > 1) { state.page -= 1; renderBlog(true, true); } });
+    next?.addEventListener("click", () => { state.page += 1; renderBlog(true, true); });
+    addEventListener("popstate", () => { state = readState(); renderBlog(false, false); });
+    renderBlog();
+  }
+
   /* Analytics hook - fill only after GA4 ID exists. */
   const GA4_ID = "";
   if (GA4_ID) {
