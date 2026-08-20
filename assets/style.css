@@ -3391,8 +3391,9 @@ html.preloader-seen body.is-loading { overflow: auto !important; }
   letter-spacing: .105em;
 }
 .nav-link { font-size: .69rem; white-space: nowrap; }
-.nav-link.active { color: #fff; }
-.nav-link.active::after { transform: scaleX(1); transform-origin: left; }
+.nav-link.active { color: var(--accent, #6c5ce7); }
+.nav-link.active::after { transform: scaleX(1); transform-origin: left; background: var(--accent, #6c5ce7); }
+.nav-link--policy { margin-left: clamp(6px, 0.8vw, 12px); padding-left: clamp(6px, 0.8vw, 12px); border-left: 1px solid rgba(255,255,255,.12); }
 .nav-cta {
   min-height: 44px;
   margin-left: clamp(8px, 1vw, 14px);
