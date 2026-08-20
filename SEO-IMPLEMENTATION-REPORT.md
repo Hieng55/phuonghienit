@@ -1,7 +1,7 @@
 # SEO / GEO / UI-UX Implementation Report — V4
 
 Build date: 2026-08-15  
-Website: https://phuonghienit.netlify.app/
+Website: https://phuonghienit.io.vn/
 
 ## 1. Strategic target
 
@@ -174,13 +174,11 @@ Included:
 
 - `robots.txt`
 - `sitemap.xml`
-- `_redirects`
-- `netlify.toml`
+- `vercel.json`
 - `site.webmanifest`
 - `llms.txt`
 - custom 404
 - noindex thank-you page
-- Netlify contact form
 - GA4 event hook ready for a future `G-...` Measurement ID
 
 Tracking hooks prepared:

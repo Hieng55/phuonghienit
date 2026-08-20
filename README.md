@@ -8,7 +8,7 @@ Bản V4 lấy **source portfolio gốc làm visual master**, không đổi thà
 - UI/UX premium nhưng nội dung và CTA phải đọc được trước khi Three.js/GSAP hoàn tất tải.
 
 ## Deploy
-Upload **toàn bộ nội dung của thư mục này** lên Netlify. `index.html`, `netlify.toml`, `_redirects`, `robots.txt` và `sitemap.xml` phải nằm ở publish root.
+Website được host trên **Vercel**. Push code lên Git repo → Vercel tự động deploy. `index.html`, `robots.txt`, `sitemap.xml` và `vercel.json` phải nằm ở publish root.
 
 ## Performance strategy
 - Nội dung SEO/GEO tồn tại sẵn trong HTML.
@@ -22,7 +22,7 @@ Upload **toàn bộ nội dung của thư mục này** lên Netlify. `index.html
 `assets/site.js` đang để `GA4_ID = ""`. Khi có Measurement ID dạng `G-...`, thay giá trị này hoặc gửi ID để cập nhật.
 
 ## Cache và cập nhật
-Website không cần trang quản trị cache hoặc biến môi trường bảo mật. `netlify.toml` đặt `no-store` cho toàn bộ HTML, CSS, JavaScript và hình ảnh để trình duyệt và Netlify CDN không lưu lại phản hồi.
+Website không cần trang quản trị cache hoặc biến môi trường bảo mật. `vercel.json` đặt `no-store` cho toàn bộ HTML, CSS, JavaScript và hình ảnh.
 
 ## Local SEO
 - TP.HCM: 35/6H Ấp Hưng Lân, Hóc Môn, Hồ Chí Minh.
