@@ -5101,3 +5101,32 @@ html[data-theme="dark"] .social-icon img[src$="github.svg"] {
     border-bottom: 1px solid var(--line-soft);
   }
 }
+/* FIX: Hover Gioi thieu / Bao mat must NOT keep Blog submenu open */
+.nav:has(> a[href="/gioi-thieu/"]:hover) .nav-item--has-submenu .submenu,
+.nav:has(> a[href="/chinh-sach-bao-mat/"]:hover) .nav-item--has-submenu .submenu,
+.nav:has(> a[href="/gioi-thieu/"]:focus-visible) .nav-item--has-submenu .submenu,
+.nav:has(> a[href="/chinh-sach-bao-mat/"]:focus-visible) .nav-item--has-submenu .submenu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate(-50%, -8px) !important;
+  pointer-events: none;
+}
+.nav:has(> a[href="/gioi-thieu/"]:hover) .nav-item--has-submenu .submenu--mega,
+.nav:has(> a[href="/chinh-sach-bao-mat/"]:hover) .nav-item--has-submenu .submenu--mega,
+.nav:has(> a[href="/gioi-thieu/"]:focus-visible) .nav-item--has-submenu .submenu--mega,
+.nav:has(> a[href="/chinh-sach-bao-mat/"]:focus-visible) .nav-item--has-submenu .submenu--mega {
+  transform: translateY(-8px) !important;
+}
+/* Avoid mega submenu overlapping Gioi thieu / Bao mat hover area on desktop */
+@media (min-width: 901px) {
+  .submenu--mega {
+    right: 0;
+    left: auto;
+    transform: translateY(-8px);
+  }
+  .nav-item--has-submenu:hover .submenu--mega,
+  .nav-item--has-submenu:focus-within .submenu--mega,
+  .nav-item--has-submenu.submenu-open .submenu--mega {
+    transform: translateY(0);
+  }
+}
