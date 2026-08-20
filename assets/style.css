@@ -3393,7 +3393,7 @@ html.preloader-seen body.is-loading { overflow: auto !important; }
 .nav-link { font-size: .69rem; white-space: nowrap; }
 .nav-link.active { color: var(--accent, #6c5ce7); }
 .nav-link.active::after { transform: scaleX(1); transform-origin: left; background: var(--accent, #6c5ce7); }
-.nav-link--policy { margin-left: clamp(6px, 0.8vw, 12px); padding-left: clamp(6px, 0.8vw, 12px); border-left: 1px solid rgba(255,255,255,.12); }
+.nav-link--policy { border-left: 1px solid rgba(255,255,255,.12); }
 .nav-cta {
   min-height: 44px;
   margin-left: clamp(8px, 1vw, 14px);
@@ -4442,10 +4442,7 @@ html[data-theme="dark"] .social-icon img[src$="github.svg"] {
     background: rgba(124, 92, 255, .08);
   }
 
-  .nav-link--policy {
-    margin-left: 0;
-    padding-left: 16px;
-    border-left: 0;
+  .nav-link--policy { border-left: 0;
     border-bottom: 1px solid var(--line-soft);
   }
 
