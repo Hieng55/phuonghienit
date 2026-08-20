@@ -5082,3 +5082,22 @@ html[data-theme="dark"] .social-icon img[src$="github.svg"] {
     opacity: .35;
   }
 }
+
+/* FIX: Mobile nav - Gioi thieu & Bao mat phai xuong dong (stack vertical) */
+@media (max-width: 900px) {
+  .nav {
+    grid-template-columns: 1fr;
+  }
+  .nav > a.nav-link,
+  .nav > a.nav-link--policy {
+    display: block !important;
+    width: 100% !important;
+    grid-column: 1 / -1;
+  }
+  .nav > a.nav-link[href="/gioi-thieu/"] {
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav > a.nav-link--policy {
+    border-bottom: 1px solid var(--line-soft);
+  }
+}
