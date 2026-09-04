@@ -1857,7 +1857,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 16px 24px;
       padding-top: 28px;
       color: #788293;
       font-size: 0.78rem;
@@ -1868,6 +1869,27 @@
       align-items: center;
       gap: 8px;
       color: #dce2ec;
+    }
+
+    .dmca-badge {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      opacity: 0.85;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dmca-badge:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .dmca-badge img {
+      display: block;
+      width: auto;
+      height: 24px;
     }
 
     /* RESPONSIVE */
