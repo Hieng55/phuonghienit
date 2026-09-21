@@ -1,6 +1,6 @@
-# SEO / GEO / UI-UX Implementation Report — V4
+# SEO / GEO / UI-UX Implementation Report — V5
 
-Build date: 2026-08-15  
+Build date: 2026-09-21
 Website: https://phuonghienit.io.vn/
 
 ## 1. Strategic target
@@ -8,6 +8,7 @@ Website: https://phuonghienit.io.vn/
 Primary commercial queries:
 
 - `thiết kế website tphcm`
+- `thiết kế website hóc môn`
 - `thiết kế website nha trang`
 
 Top 10–20 is the working KPI target, **not a guaranteed ranking**. The website controls technical quality, relevance, content depth, internal linking, entity clarity and UX; final rankings also depend on competitors, authority, local distance, reviews, citations, backlinks and Google systems.
@@ -46,11 +47,12 @@ Performance changes:
 
 ## 3. Information architecture
 
-Indexable pages: 18
+Indexable HTML pages: 46; sitemap URLs: 45
 
 - `/`
 - `/dich-vu-thiet-ke-website/`
 - `/thiet-ke-website-tphcm/`
+- `/thiet-ke-website-hoc-mon/`
 - `/thiet-ke-website-nha-trang/`
 - `/bang-gia-thiet-ke-website/`
 - `/du-an/`
@@ -58,7 +60,13 @@ Indexable pages: 18
 - `/gioi-thieu/`
 - `/lien-he/`
 - `/kien-thuc/`
-- four supporting knowledge articles
+- knowledge hub, policy clusters and supporting local articles
+
+Hóc Môn topic cluster added in V5:
+
+- `/thiet-ke-website-hoc-mon/` — commercial local landing page
+- `/kien-thuc/chi-phi-thiet-ke-website-hoc-mon/` — commercial investigation intent
+- `/kien-thuc/checklist-website-xuong-san-xuat-hoc-mon/` — informational B2B intent
 
 Noindex utility pages:
 
@@ -88,11 +96,21 @@ Uses the real physical location:
 
 The page targets the city-wide service query while transparently stating the real Hóc Môn location.
 
+### Hóc Môn
+
+The local landing page represents the real working location at 35/6H Ấp Hưng Lân. It targets the Hóc Môn service query with distinct content for workshops, manufacturing, logistics, B2B suppliers and local businesses rather than copying the TP.HCM page.
+
+The cluster separates search intent to reduce cannibalization:
+
+- service selection and conversion on the landing page
+- budget and quote comparison in the cost article
+- content, functionality and acceptance criteria in the workshop checklist
+
 ### Nha Trang
 
 Physical location remains:
 
-223 Đường Bến Đò, Hòa Thắng, Khánh Hòa, Việt Nam
+223 Đường Bến Đò, phường Hòa Thắng, tỉnh Khánh Hòa, Việt Nam
 
 Nha Trang is represented as a **service area**, not a fabricated addressLocality.
 
@@ -136,13 +154,13 @@ Core entity graph:
 - two `ProfessionalService` local entities
 - `Service`
 - `BreadcrumbList`
-- `FAQPage` where visible FAQ content exists
+- visible FAQ content for users; `FAQPage` markup is not treated as an AI Overview requirement or a current Google rich-result opportunity
 - `CreativeWork` for project case studies
 - `ProfilePage`
 - `Article`
 - `ItemList`
 
-Organization, Person, location and service entities reuse consistent IDs instead of creating unrelated identities per page.
+Organization, Person, location and service entities reuse consistent IDs instead of creating unrelated identities per page. The Hồ Chí Minh branch uses `#hocmon-location` and resolves to the Hóc Môn landing page.
 
 The build intentionally does **not** include self-serving `aggregateRating` markup.
 
@@ -194,7 +212,7 @@ Tracking hooks prepared:
 Automated local validator:
 
 ```text
-HTML pages: 20; indexable: 18
+HTML pages: 47; indexable: 46; noindex: 1
 PASS: titles, descriptions, canonicals, single H1 on indexable pages, JSON-LD, internal links
 ```
 
@@ -204,6 +222,9 @@ Additional QA:
 - duplicate canonical URLs: 0
 - JSON-LD parse errors: 0
 - aggregateRating markup: 0
+- JSON-LD blocks parsed: 107
+- sitemap URLs: 45 unique entries
+- new Hóc Môn URLs return HTTP 200 on `localhost:3000`
 - TP.HCM page: ~1,025 visible words
 - Nha Trang page: ~1,034 visible words
 - homepage: ~1,177 visible words

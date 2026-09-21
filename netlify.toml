@@ -10,8 +10,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Cache-Control = "no-store, max-age=0"
-    Netlify-CDN-Cache-Control = "no-store"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
@@ -20,5 +18,5 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "no-store, max-age=0"
-    Netlify-CDN-Cache-Control = "no-store"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    Netlify-CDN-Cache-Control = "public, s-maxage=604800, stale-while-revalidate=2592000"
